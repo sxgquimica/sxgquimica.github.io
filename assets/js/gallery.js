@@ -34,6 +34,14 @@ function closeFullImg(){
 var folder = "images/galeria/";
 var imgContainerHTML = document.getElementById("img-container").innerHTML;
 
+const express = require('express');
+const app = express();
+const path = require('path');
+
+// Allow assets directory listings
+const serveIndex = require('serve-index');
+app.use('/images/galeria', serveIndex(path.join(__dirname, '/images/galeria')));
+
 $.ajax({
     url : folder,
     success: function (data) {
