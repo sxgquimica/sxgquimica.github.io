@@ -25,7 +25,7 @@ $.ajax({
     success: function (data) {
         //List all .png file names in the page
         $(data).find("a:contains(" + fileExtension + ")").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http://", "");
+            var filename = this.href.replace(window.location.host, "").replace("http://", "https://");
             imgContainerHTML.append("<img src='" + dir + filename + "' onclick='openFullImg(this.src)'>");
         });
     }
