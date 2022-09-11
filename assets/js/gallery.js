@@ -16,17 +16,31 @@ function closeFullImg(){
 //     document.getElementById("img-container").innerHTML+=(`<img src="images/galeria/img${i}.jpg" onclick="openFullImg(this.src)" alt="img${i}">`);
 // }
 
-var dir = "images/galeria";
-var fileExtension = ".jpg";
+// var dir = "images/galeria";
+// var fileExtension = ".jpg";
+// var imgContainerHTML = document.getElementById("img-container").innerHTML;
+// $.ajax({
+//     //This will retrieve the contents of the folder if the folder is configured as 'browsable'
+//     url: dir,
+//     success: function (data) {
+//         //List all .png file names in the page
+//         $(data).find("a:contains(" + fileExtension + ")").each(function () {
+//             var filename = this.href.replace(window.location.host, "").replace("http://", "");
+//             imgContainerHTML.append("<img src='" + dir + filename + "' onclick='openFullImg(this.src)'>");
+//         });
+//     }
+// });
+
+var folder = "images/galeria";
 var imgContainerHTML = document.getElementById("img-container").innerHTML;
+
 $.ajax({
-    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-    url: dir,
+    url : folder,
     success: function (data) {
-        //List all .png file names in the page
-        $(data).find("a:contains(" + fileExtension + ")").each(function () {
-            var filename = this.href.replace(window.location.host, "").replace("http://", "");
-            imgContainerHTML.append("<img src='" + dir + filename + "' onclick='openFullImg(this.src)'>");
+        $(data).find("a").attr("href", function (i, val) {
+            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                imgContainerHTML += "<img src='" + folder + val + "' onclick='openFullImg(this.src)'>";
+            }
         });
     }
 });
