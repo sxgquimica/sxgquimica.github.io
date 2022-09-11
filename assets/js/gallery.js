@@ -31,7 +31,7 @@ function closeFullImg(){
 //     }
 // });
 
-var folder = "images/galeria";
+var folder = "images/galeria/";
 var imgContainerHTML = document.getElementById("img-container").innerHTML;
 
 $.ajax({
