@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" type="text/css"/>
+		<link rel="stylesheet" href="assets/css/gallery.css" type="text/css"/>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -55,6 +56,7 @@
 					<nav id="nav">
 						<a href="#benvida" class="icon fa-home active"><span>Benvid@!</span></a>
 						<a href="#traballo" class="icon fa-flask"><span>Traballo</span></a>
+						<a href="#galeria" class="icon fa-solid fa-image"><span>Galería</span></a>
 						<a href="#nos" class="icon fa-child"><span>Nós</span></a>
 						<a href="#contacto" class="icon fa-envelope"><span>Contacto</span></a>
 						<a href="#calendario" class="icon fa-calendar"><span>Calendario</span></a>
@@ -66,34 +68,10 @@
 				<!-- Main -->
 					<div id="main">
 
-						<!-- Me
-							<article id="me" class="panel">
-								<header>
-									<h1 class="maintitle">SXGQ</h1>
-									<p>Sociedade Xuvenil Galega de Química</p>
-								</header>
-								<a href="#traballo" class="jumplink pic">
-									<span class="arrow icon fa-chevron-right"><span>See my work</span></span>
-									<img src="images/me.jpg" alt="" />
-								</a>
-							</article>
-						-->
-
 							<!-- Me -->
 								<article id="benvida" class="panel">
 									<div class="video-overlay">
 										<span class="logo"></span>
-										<!--
-										<h1 id="bigtext">
-    									<div>SXGQ</div>
-    									<div>Sociedade Xuvenil Galega de Química</div>
-										</h1>
-										<script src="assets/js/bigtext.js">
-										$(document).ready(function () r{
-											$('#bigtext').bigtext();
-										});
-										</script>
-										-->
 
 										<h1>SXGQ</h1>
 										<p>Sociedade Xuvenil Galega de Química</p>
@@ -106,11 +84,6 @@
 										<video preload="auto" autoplay muted playsinline loop src="images/video-web.mp4" type="video/mp4">
         								</video>
 									</div>
-									<!-- <div class="image fit">
-									<img src="assets/css/images/bg.png" alt="logo"/>
-									<div class="centered-text"><h1>Benvid@ á páxina oficial da Sociedade Xuvenil Galega de Química!</h1>
-									</div>
-									</div> -->
 								</article>
 
 							<!-- Nós -->
@@ -305,6 +278,22 @@
 
 						</article>
 
+                        <!-- Gallery -->
+							<article id="galeria" class="panel">
+								<header>
+									<h2>GALERÍA</h2>
+									<hr>
+									<h3>Algunhas das nosas fotos</h3>
+								</header>
+                                <div class="full-img" id="fullImgBox">
+                                    <img src="images/galeria/img1.jpg" alt="img1" id="fullImg">
+                                    <span onclick="closeFullImg()"><i class="fa fa-times"></i></span>
+                                </div>
+                                <div class="img-gallery" id="img-container">
+                                </div>
+
+						</article>
+
 						<!-- Contact -->
 							<article id="contacto" class="panel">
 								<header>
@@ -368,6 +357,8 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script src="assets/js/gallery.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/skel-viewport.min.js"></script>
 			<script src="assets/js/util.js"></script>
