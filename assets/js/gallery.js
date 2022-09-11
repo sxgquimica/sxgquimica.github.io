@@ -4,51 +4,54 @@ var fullImg = document.getElementById("fullImg");
 function openFullImg(pic){
     fullImgBox.style.display = "flex";
     fullImg.src = pic;
+    fullImg.alt = pic.alt
 }
 
 function closeFullImg(){
     fullImgBox.style.display = "none";
 }
 
-// import * as img from 'images/galeria/path_to_img.ext';
-// let n_img = 5;
-// for (var i = 1; i <= n_img; i++) {
-//     document.getElementById("img-container").innerHTML+=(`<img src="images/galeria/img${i}.jpg" onclick="openFullImg(this.src)" alt="img${i}">`);
-// }
+function hideImg(pic){
+    pic.style.display = "none";
+}
 
-// var dir = "images/galeria";
-// var fileExtension = ".jpg";
-// var imgContainerHTML = document.getElementById("img-container").innerHTML;
-// $.ajax({
-//     //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-//     url: dir,
-//     success: function (data) {
-//         //List all .png file names in the page
-//         $(data).find("a:contains(" + fileExtension + ")").each(function () {
-//             var filename = this.href.replace(window.location.host, "").replace("http://", "");
-//             imgContainerHTML.append("<img src='" + dir + filename + "' onclick='openFullImg(this.src)'>");
-//         });
-//     }
-// });
-
-var folder = "images/galeria/";
-var imgContainerHTML = document.getElementById("img-container").innerHTML;
-
-const express = require('express');
-const app = express();
-const path = require('path');
-
-// Allow assets directory listings
-const serveIndex = require('serve-index');
-app.use('/images/galeria', serveIndex(path.join(__dirname, '/images/galeria')));
-
-$.ajax({
-    url : folder,
-    success: function (data) {
-        $(data).find("a").attr("href", function (i, val) {
-            if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-                imgContainerHTML += "<img src='" + folder + val + "' onclick='openFullImg(this.src)'>";
-            }
+(async () => {
+    const img_container = document.getElementById("img-container");
+    const caption_container = document.getElementById("full-img-description")
+  
+    for (let i = 1; i <= 10; i++) {
+      // get file image
+      const pic_name = `img${i}`;
+      const pic_path = "images/galeria/" + pic_name + ".jpg";
+      // const caption_path = "images/galeria/description" + pic_name + ".txt"
+  
+      const newImage = new Image();
+      try {
+        newImage.src = pic_path;
+        // newImage.alt = pic_name;
+        newImage.setAttribute("onclick", "openFullImg(this.src)")
+        await new Promise((resolve, reject) => {
+          newImage.onload = function() {
+            resolve();
+          }
+          newImage.onerror = function() {
+            reject();
+          }
         });
+      } catch(e) {
+        // reject was called, break out of the loop:
+        continue;
+      }
+      // var fileReader = new FileReader(); 
+      // fileReader.onload = function (e) {
+      //   newImage.alt = fileReader.result; 
+      // } 
+      // fileReader.readAsText(caption_path);
+      // fetch(caption_path)
+      //   .then(response => response.text())
+      //   .then((data) => {
+      //       newImage.alt = data
+      // })
+      img_container.appendChild(newImage);
     }
-});
+  })();
