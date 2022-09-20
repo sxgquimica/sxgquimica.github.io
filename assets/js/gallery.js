@@ -19,7 +19,7 @@ function hideImg(pic){
     const img_container = document.getElementById("img-container");
     const caption_container = document.getElementById("full-img-description")
   
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 20; i++) {
       // get file image
       const pic_name = `img${i}`;
       const pic_path = "images/galeria/" + pic_name + ".jpg";
