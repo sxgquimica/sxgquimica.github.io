@@ -752,7 +752,7 @@
 
 body::after{
 position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-content:url("images/benvida.png") url("images/nos.png") url("images/contacto.png") url("images/traballo.png") url("images/galeria.png");
+content:url("images/benvida.png") url("images/mapa.png") url("images/nos.png") url("images/contacto.png") url("images/traballo.png") url("images/galeria.png");
 }
 
 	body {
@@ -1291,6 +1291,34 @@ a.button {
     width: 15em;
     margin: auto auto 1em auto;
     }
+
+/* Mapa */
+
+#mapa .row > * {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0.75em;
+}
+
+#mapa img {
+	width: 100%;
+}
+
+#mapa p.description {
+    width: 83%;
+    display: inline-block;
+    /*padding-left: 18%;*/
+}
+
+#mapa h4.name-mini {
+    text-align: center;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    /*padding-left: 18%;*/
+}
 
 /* Nos */
 
@@ -1891,7 +1919,40 @@ a.button {
 				#benvida header > p {
 					font-size: 1.25em;
 				}
+		/* Mapa */
 
+            #mapa {
+                padding: 0;
+                height: 29em;
+            }
+
+			#mapa .pic {
+				width: 100%;
+			}
+
+				#mapa .pic img {
+					display: block;
+					width: 100%;
+				}
+
+				#mapa .pic .arrow {
+					display: none;
+				}
+
+			#mapa header {
+				text-align: center;
+			}
+
+				#mapa header > h1 {
+					font-size: 2.15em;
+					letter-spacing: -0.025em;
+				}
+
+				#mapa header > p {
+					font-size: 1.25em;
+				}
+
+		
         /* Nos */
 
         #nos p.description {
