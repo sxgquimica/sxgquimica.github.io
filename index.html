@@ -350,9 +350,9 @@
 	      </p>
 <div class="gallery-container">
     <div class="slides" id='slides1'>
-<img src="images/galeria/Obradoiros-1.jpeg" alt="Obradoiros 1" onclick="openFullImg('images/galeria/Obradoiros-1.jpeg')">
-<img src="images/galeria/Obradoiros-2.png" alt="Obradoiros 2" onclick="openFullImg('images/galeria/Obradoiros-2.png')">
-<img src="images/galeria/Obradoiros-3.jpg" alt="Obradoiros 3" onclick="openFullImg('images/galeria/Obradoiros-3.jpg')">
+<img src="images/galeria/Obradoiros-1.jpeg" alt="Obradoiros 1" onclick="openOrCloseFullImg('images/galeria/Obradoiros-1.jpeg')">
+<img src="images/galeria/Obradoiros-2.png" alt="Obradoiros 2" onclick="openOrCloseFullImg('images/galeria/Obradoiros-2.png')">
+<img src="images/galeria/Obradoiros-3.jpg" alt="Obradoiros 3" onclick="openOrCloseFullImg('images/galeria/Obradoiros-3.jpg')">
 <img src="images/galeria/Obradoiros-4.png" alt="Obradoiros 4" onclick="openFullImg('images/galeria/Obradoiros-4.png')">
 <img src="images/galeria/Obradoiros-5.jpg" alt="Obradoiros 5" onclick="openFullImg('images/galeria/Obradoiros-5.jpg')">
 <img src="images/galeria/Obradoiros-6.jpg" alt="Obradoiros 6" onclick="openFullImg('images/galeria/Obradoiros-6.jpg')">
@@ -524,18 +524,17 @@ function moveSlides(n, slideshowId) {
     slideContainer.scrollLeft = currentScrollLeft + (slideWidth * n);
 }
 
-function openFullImg(src) {
-    console.log("Abriendo imagen completa...");
+function openOrCloseFullImg(src) {
     var fullImgBox = document.getElementById("fullImgBox");
     var fullImg = document.getElementById("fullImg");
-    fullImg.src = src;
-    fullImgBox.style.display = "block";
-}
-
-function closeFullImg() {
-    console.log("Cerrando imagen completa...");
-    var fullImgBox = document.getElementById("fullImgBox");
-    fullImgBox.style.display = "none";
+    
+    // Si la imagen está ya abierta y es la misma que la que se está intentando abrir, entonces la cerramos
+    if (fullImgBox.style.display === "block" && fullImg.src === src) {
+        closeFullImg();
+    } else {
+        fullImg.src = src;
+        fullImgBox.style.display = "block";
+    }
 }
   </script>
 		  
