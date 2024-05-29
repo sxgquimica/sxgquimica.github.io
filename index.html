@@ -102,30 +102,7 @@
 
 <body>
 
-	 <script>
-    // Aquí colocas el código JavaScript
-    var slideIndex = [1, 1, 1]; // Índices de las diapositivas para cada conjunto de imágenes
-
-    function showSlides(n, slideshowIndex) {
-      var i;
-      var slides = document.getElementsByClassName(slideshowIndex);
-      if (n > slides.length) {slideIndex[slideshowIndex] = 1} 
-      if (n < 1) {slideIndex[slideshowIndex] = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none"; 
-      }
-      slides[slideIndex[slideshowIndex]-1].style.display = "block"; 
-    }
-
-    function moveSlides(n, slideshowIndex) {
-      showSlides(slideIndex[slideshowIndex] += n, slideshowIndex);
-    }
-
-    // Ejecutar la función showSlides con el índice inicial para cada conjunto de imágenes
-    showSlides(1, 'slides1');
-    showSlides(1, 'slides2');
-    showSlides(1, 'slides3');
-  </script>
+	 
 
   <!-- Wrapper-->
   <div id="wrapper">
@@ -524,26 +501,30 @@
   <script src="assets/js/compliance-cookie.js"></script>
   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
   <script src="assets/js/main.js"></script>
-<script>
-  let slideIndex = 0;
+  <script>
+    // Aquí colocas el código JavaScript
+    var slideIndex = [1, 1, 1]; // Índices de las diapositivas para cada conjunto de imágenes
 
-  function showSlides() {
-    const slides = document.getElementById('slides');
-    const totalSlides = slides.children.length;
-    if (slideIndex >= totalSlides) { slideIndex = 0; }
-    if (slideIndex < 0) { slideIndex = totalSlides - 1; }
-    const offset = -slideIndex * 100;
-    slides.style.transform = `translateX(${offset}%)`;
-  }
+    function showSlides(n, slideshowIndex) {
+      var i;
+      var slides = document.getElementsByClassName(slideshowIndex);
+      if (n > slides.length) {slideIndex[slideshowIndex] = 1} 
+      if (n < 1) {slideIndex[slideshowIndex] = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none"; 
+      }
+      slides[slideIndex[slideshowIndex]-1].style.display = "block"; 
+    }
 
-  function moveSlides(n) {
-    slideIndex += n;
-    showSlides();
-  }
+    function moveSlides(n, slideshowIndex) {
+      showSlides(slideIndex[slideshowIndex] += n, slideshowIndex);
+    }
 
-  // Inicializar la presentación
-  showSlides();
-</script>
+    // Ejecutar la función showSlides con el índice inicial para cada conjunto de imágenes
+    showSlides(1, 'slides1');
+    showSlides(1, 'slides2');
+    showSlides(1, 'slides3');
+  </script>
 		  
 </body>
 
