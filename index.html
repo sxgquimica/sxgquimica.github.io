@@ -28,15 +28,17 @@
     }
 
     .slides {
-      display: flex;
-      width: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
+    width: 100%; /* Ancho completo del contenedor */
+    overflow: hidden; /* Oculta las imágenes que desbordan el contenedor */
+    white-space: nowrap; /* Evita que las imágenes se envuelvan */
+}
 
-    .slides img {
-      width: calc(100% / 3); /* Ancho del 33.33% para mostrar 3 imágenes por fila */
-      height: auto;
-    }
+.slides img {
+    display: inline-block; /* Permite que las imágenes se muestren en línea */
+    vertical-align: top; /* Alinea las imágenes en la parte superior del contenedor */
+    width: calc(100% / 3); /* Ancho igualmente dividido para cada imagen */
+    height: auto; /* Altura automática para mantener la relación de aspecto */
+}
 
     .prev, .next {
       position: absolute;
@@ -347,7 +349,7 @@
 		      Fotos en Obradoiros
 	      </p>
 <div class="gallery-container">
-    <div class="slides" id="slides1">
+    <div class="slides" id='slides1'>
 <img src="images/galeria/Obradoiros-1.jpg" alt="Obradoiros 1">
 <img src="images/galeria/Obradoiros-2.png" alt="Obradoiros 2">
 <img src="images/galeria/Obradoiros-3.jpg" alt="Obradoiros 3">
@@ -515,8 +517,11 @@
       slides[slideIndex[slideshowIndex]-1].style.display = "block"; 
     }
 
-    function moveSlides(n, slideshowIndex) {
-      showSlides(slideIndex[slideshowIndex] += n, slideshowIndex);
+function moveSlides(n, slideshowId) {
+    var slideContainer = document.getElementById(slideshowId);
+    var currentScrollLeft = slideContainer.scrollLeft;
+    var slideWidth = slideContainer.clientWidth;
+    slideContainer.scrollLeft = currentScrollLeft + (slideWidth * n);
     }
 
     // Ejecutar la función showSlides con el índice inicial para cada conjunto de imágenes
