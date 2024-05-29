@@ -517,12 +517,24 @@
       slides[slideIndex[slideshowIndex]-1].style.display = "block"; 
     }
 
-function moveSlides(n, slideshowId) {
-    var slideContainer = document.getElementById(slideshowId);
-    var currentScrollLeft = slideContainer.scrollLeft;
-    var slideWidth = slideContainer.clientWidth;
-    slideContainer.scrollLeft = currentScrollLeft + (slideWidth * n);
+function moveSlides(n, slideshowIndex) {
+    // Obtiene todas las diapositivas con el índice dado
+    var slides = document.getElementsByClassName(slideshowIndex);
+    var slideIndex = slideIndex[slideshowIndex]; // Corregido de slideIndexes a slideIndex
+    slideIndex += n; // Incrementa el índice por n
+
+    // Si se llega al final, vuelve al principio
+    if (slideIndex >= slides.length) {
+        slideIndex = 0;
     }
+    // Si se pasa del principio, vuelve al final
+    else if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+    }
+
+    // Muestra la diapositiva actualizada
+    showSlides(slideIndex, slideshowIndex);
+}
 
     // Ejecutar la función showSlides con el índice inicial para cada conjunto de imágenes
     showSlides(1, 'slides1');
