@@ -441,7 +441,27 @@
   <script src="assets/js/compliance-cookie.js"></script>
   <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
   <script src="assets/js/main.js"></script>
+<script>
+  let slideIndex = 0;
 
+  function showSlides() {
+    const slides = document.getElementById('slides');
+    const totalSlides = slides.children.length;
+    if (slideIndex >= totalSlides) { slideIndex = 0; }
+    if (slideIndex < 0) { slideIndex = totalSlides - 1; }
+    const offset = -slideIndex * 100;
+    slides.style.transform = `translateX(${offset}%)`;
+  }
+
+  function moveSlides(n) {
+    slideIndex += n;
+    showSlides();
+  }
+
+  // Inicializar la presentación
+  showSlides();
+</script>
+		  
 </body>
 
 </html>
