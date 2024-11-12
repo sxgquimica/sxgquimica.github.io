@@ -7,560 +7,667 @@
 <html>
 
 <head>
-  <title>SXGQ</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-  <link rel="stylesheet" href="assets/css/gallery.css" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
-  <noscript>
-    <link rel="stylesheet" href="assets/css/noscript.css" />
-  </noscript>
-  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-<style>
-    .gallery-container {
-      position: relative;
-      max-width: 800px;
-      margin: auto;
-      overflow: hidden;
-    }
+    <title>SXGQ</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/gallery.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400i" rel="stylesheet">
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <style>
+        .gallery-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
 
-    .slides {
-    width: 100%; /* Ancho completo del contenedor */
-    overflow: hidden; /* Oculta las imágenes que desbordan el contenedor */
-    white-space: nowrap; /* Evita que las imágenes se envuelvan */
-}
+        .slides {
+            width: 100%;
+            /* Ancho completo del contenedor */
+            overflow: hidden;
+            /* Oculta las imágenes que desbordan el contenedor */
+            white-space: nowrap;
+            /* Evita que las imágenes se envuelvan */
+        }
 
-.slides img {
-    display: inline-block; /* Permite que las imágenes se muestren en línea */
-    vertical-align: top; /* Alinea las imágenes en la parte superior del contenedor */
-    width: calc(100% / 3); /* Ancho igualmente dividido para cada imagen */
-    height: auto; /* Altura automática para mantener la relación de aspecto */
-}
+        .slides img {
+            display: inline-block;
+            /* Permite que las imágenes se muestren en línea */
+            vertical-align: top;
+            /* Alinea las imágenes en la parte superior del contenedor */
+            width: calc(100% / 3);
+            /* Ancho igualmente dividido para cada imagen */
+            height: auto;
+            /* Altura automática para mantener la relación de aspecto */
+        }
 
-    .prev, .next {
-      position: absolute;
-      top: 50%;
-      width: auto;
-      padding: 16px;
-      margin-top: -22px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      cursor: pointer;
-      background-color: rgba(0,0,0,0.5);
-      border: none;
-      user-select: none;
-      transition: background-color 0.3s ease;
-    }
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
 
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-    .prev {
-      left: 0;
-    }
+        .prev {
+            left: 0;
+        }
 
-    .next {
-      right: 0;
-    }
-  </style>
-  <style>
-    @media (max-width: 550px) {
-      .big-container {
-        display: none;
-      }
-    }
+        .next {
+            right: 0;
+        }
+    </style>
+    <style>
+        @media (max-width: 550px) {
+            .big-container {
+                display: none;
+            }
+        }
 
-    @media (min-width: 550px) {
-      .small-container {
-        display: none;
-      }
-    }
+        @media (min-width: 550px) {
+            .small-container {
+                display: none;
+            }
+        }
 
-    /* Responsive iFrame */
-    .responsive-iframe-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      padding-top: 30px;
-      height: 0;
-      overflow: hidden;
-    }
+        /* Responsive iFrame */
+        .responsive-iframe-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 30px;
+            height: 0;
+            overflow: hidden;
+        }
 
-    .responsive-iframe-container iframe,
-    .vresponsive-iframe-container object,
-    .vresponsive-iframe-container embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+        .responsive-iframe-container iframe,
+        .vresponsive-iframe-container object,
+        .vresponsive-iframe-container embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>
 
-	 
 
-  <!-- Wrapper-->
-  <div id="wrapper">
 
-    <!-- Nav -->
-    <nav id="nav">
-      <a href="#benvida" class="icon fa-home active"><span>Benvid@!</span></a>
-      <a href="#traballo" class="icon fa-flask"><span>Traballo</span></a>
-      <a href="#mapa" class="icon fa-map"><span>Mapa</span></a>
-      <a href="#galeria" class="icon fa-solid fa-image"><span>Galería</span></a>
-      <a href="#nos" class="icon fa-child"><span>Nós</span></a>
-      <a href="#contacto" class="icon fa-envelope"><span>Contacto</span></a>
-      <!-- <a href="#calendario" class="icon fa-calendar"><span>Calendario</span></a> */ -->
-      <a href="https://www.facebook.com/sxgquimica/" class="icon fb fa-facebook"
-        target="_blank"><span>Facebook</span></a>
-      <a href="https://www.instagram.com/sxgquimica/" class="icon ig fa-instagram"
-        target="_blank"><span>Instagram</span></a>
-      <a href="https://twitter.com/sxgquimica" class="icon tw fa-twitter" target="_blank"><span>Twitter</span></a>
-    </nav>
+    <!-- Wrapper-->
+    <div id="wrapper">
 
-    <!-- Main -->
-    <div id="main">
+        <!-- Nav -->
+        <nav id="nav">
+            <a href="#benvida" class="icon fa-home active"><span>Benvid@!</span></a>
+            <a href="#traballo" class="icon fa-flask"><span>Traballo</span></a>
+            <a href="#mapa" class="icon fa-map"><span>Mapa</span></a>
+            <a href="#galeria" class="icon fa-solid fa-image"><span>Galería</span></a>
+            <a href="#nos" class="icon fa-child"><span>Nós</span></a>
+            <a href="#contacto" class="icon fa-envelope"><span>Contacto</span></a>
+            <!-- <a href="#calendario" class="icon fa-calendar"><span>Calendario</span></a> */ -->
+            <a href="https://www.facebook.com/sxgquimica/" class="icon fb fa-facebook"
+                target="_blank"><span>Facebook</span></a>
+            <a href="https://www.instagram.com/sxgquimica/" class="icon ig fa-instagram"
+                target="_blank"><span>Instagram</span></a>
+            <a href="https://twitter.com/sxgquimica" class="icon tw fa-twitter" target="_blank"><span>Twitter</span></a>
+        </nav>
 
-      <!-- Me -->
-      <article id="benvida" class="panel">
-        <div class="video-overlay">
-          <span class="logo"></span>
+        <!-- Main -->
+        <div id="main">
 
-          <h1>SXGQ</h1>
-          <p>Sociedade Xuvenil Galega de Química</p>
-          <div class="12u$">
-            <a href="#traballo" class="jumplink button">Descubre máis</a>
-          </div>
+            <!-- Me -->
+            <article id="benvida" class="panel">
+                <div class="video-overlay">
+                    <span class="logo"></span>
+
+                    <h1>SXGQ</h1>
+                    <p>Sociedade Xuvenil Galega de Química</p>
+                    <div class="12u$">
+                        <a href="#traballo" class="jumplink button">Descubre máis</a>
+                    </div>
+
+                </div>
+                <div class="bg-video">
+                    <video preload="auto" autoplay muted playsinline loop src="images/video-web.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
+
+            <!-- Mapa -->
+            <article id="mapa" class="panel">
+                <header>
+                    <h2>ROTEIRO CARTOGRÁFICO</h2>
+                    <hr>
+                    <h3>Onde estivo a Sociedade?</h3>
+                </header>
+                <p>
+                    Descubre os lugares que a nosa Sociedade visitou no noso mapa interactivo. Cada marcador simboliza
+                    un Obradoiro e están resaltados con diferentes cores que representan a data (dende a nosa
+                    inauguración en 2018). Explora connosco os recunchos que marcamos no noso percorrido!
+                </p>
+                <p style="text-align: center;">
+                    <iframe
+                        src="https://www.google.com/maps/d/u/1/embed?mid=1nkS-dBqM8mobvCTjBLKEjk_Kdt61yvw&ehbc=2E312F&noprof=1"
+                        width="100%" height="480"></iframe>
+                </p>
+            </article>
+
+            <!-- Nós -->
+            <article id="nos" class="panel">
+                <header>
+                    <h2>QUEN SOMOS?</h2>
+                    <hr>
+                    <h3>Descubre a nosa estrutura!</h3>
+                </header>
+                <p>
+                    A SXGQ está integrada por persoas con grande interese na ciencia. Moitos de nós somos estudantes
+                    universitarios vinculados á área da química. Tod@s temos en común unha grande paixón pola química e
+                    polo
+                    galego!
+                </p>
+                <p>
+                    Cada ano máis xoves con interese na ciencia se incorporan ao noso proxecto. Cada un de nós xoga un
+                    rol
+                    crucial, e organizámonos en grupos de traballo coordinados polos membros da directiva. Queres
+                    coñecernos?
+                    Continúa lendo!
+                </p>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/presi.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Yeray Folgar</strong>, presidente</h3>
+                                <p class="card-text description">Estudante de doutoramento en Ciencia e Tecnoloxía
+                                    Química na USC. Centrado na entrega de compostos bioactivos a células, desenvolve a
+                                    súa actividade investigadora en química biolóxica no CiQUS. Ademais da súa paixón
+                                    pola divulgación científica, tamén disfruta coleccionando insectos, minerais e
+                                    fósiles. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/vicepresi.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Alejandro Rodríguez</strong>, vicepresidente</h3>
+                                <p class="card-text description">Estudante de Química e Bioloxía na USC. Inquedo e
+                                    curioso, gústalle preguntarse o porqué das cousas. Desfruta xermolando sementes e
+                                    creando cousas coas maos. Ama as abellas. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/secretario.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Patricia Fulias</strong>, secretaria</h3>
+                                <p class="card-text description">Estudante de doutoramento en Ciencia e Tecnoloxía
+                                    Química na USC. O seu traballo céntrase no desenvolvemento de novos fluoróforos e
+                                    tamén no estudo do novos transportadores celulares no CiQUS. Nos seus ratos libres
+                                    gústalle bailar, aprender sobre política social e fedellar no mundo da repostería.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/tesoureiro.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Ana Seijas</strong>, tesoureira</h3>
+                                <p class="card-text description">Tras rematar o dobre grao en Bioloxía e Química saltou
+                                    a un mestrado de Nanobiofotónica Molecular. Encántalle pasar tempo no laboratorio
+                                    cacharreando. Gústalle achegar a ciencia á sociedade. Apaixoada da natureza e da
+                                    fotografía.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/vogal1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Adriana Barros</strong>, vogal</h3>
+                                <p class="card-text description">De Santiago de Compostela e graduada en Química.
+                                    Encántalle a ciencia como ferramenta para explicar fenómenos cotiás e mellorar o
+                                    noso día a día. Namorada do mar e aficionada á natación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/vogal2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Bea Lista</strong>, vogal</h3>
+                                <p class="card-text description">De Malpica de Bergantiños. Graduada en Bioloxía e en
+                                    Química. Desfruto moitísimo o proceso que leva consigo a divulgación científica.
+                                    Ademais da ciencia, encántame o deporte. Concretamente, xogo ao fútbol sala.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/vogal3.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Marta Vélez</strong>, vogal</h3>
+                                <p class="card-text description">Graduada en química e bioloxía e actualmente cursando o
+                                    máster de profesorado.
+                                    Leva dende pequena interesada pola ciencia e agora quere compartir a súa paixón cos
+                                    demais.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/vogal4.jpeg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>Sergio Serantes</strong>, vogal</h3>
+                                <p class="card-text description">Graduado en Bioloxía e Química pola Universidade de
+                                    Santiago de Compostela,
+                                    mestrado en Biotecnoloxía Molecular pola Universidade de Barcelona.
+                                    Estudante de doutoramento en Ciencia e Tecnoloxía Química, avaliando as propiedades
+                                    antitumorais de
+                                    estruturas peptídicas supramoleculares.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card team-profile h-100">
+                            <img src="images/soci.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h3 class="card-title"><strong>...e moit@s máis!</strong></h3>
+                                <p class="card-text description">A directiva é importante para a coordinación, pero no
+                                    laboratorio e na rúa tod@s
+                                    aportamos por igual. A Soci está chea de grandes persoas coas que podes traballar a
+                                    gusto, aprender
+                                    moitísimo
+                                    e pasalo de marabilla!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <div class="12u$" style="text-align: center;">
+                    <p>Quererías formar parte do noso equipo? Escríbenos un email presentándote!
+                    </p>
+                    <a href="#contacto" class="jumplink button" style="color: #ffffff;">Apúntate</a>
+                </div>
+
+                <!--
+
+                <p class="team-profile">
+                    <span class="img-container img-circle">
+                        <img src="images/vogal3.jpeg">
+                    </span>
+                <h3><strong>Marta Vélez</strong>, vogal</h3>
+                <p class="description">Graduada en química e bioloxía e actualmente cursando o máster de profesorado.
+                    Leva dende pequena interesada pola ciencia e agora quere compartir a súa paixón cos demais.
+                </p>
+                <hr>
+                </p>
+
+                <p class="team-profile">
+                    <span class="img-container img-circle">
+                        <img src="images/vogal4.jpeg">
+                    </span>
+                <h3><strong>Sergio Serantes</strong>, vogal</h3>
+                <p class="description">Graduado en Bioloxía e Química pola Universidade de Santiago de Compostela,
+                    mestrado en Biotecnoloxía Molecular pola Universidade de Barcelona.
+                    Estudante de doutoramento en Ciencia e Tecnoloxía Química, avaliando as propiedades antitumorais de
+                    estruturas peptídicas supramoleculares.
+                </p>
+                <hr>
+                </p>
+
+
+                <p class="team-profile">
+                    <span class="img-container img-circle">
+                        <img src="images/soci.jpg">
+                    </span>
+                <h3><strong>...e moit@s máis!</strong></h3>
+
+                <p class="description">A directiva é importante para a coordinación, pero no laboratorio e na rúa tod@s
+                    aportamos por igual. A Soci está chea de grandes persoas coas que podes traballar a gusto, aprender
+                    moitísimo
+                    e pasalo de marabilla!</p>
+                <hr>
+                <div class="12u$" style="text-align: center;">
+                    <p>Quererías formar parte do noso equipo? Escríbenos un email presentándote!
+                    </p>
+                    <a href="#contacto" class="jumplink button" style="color: #ffffff;">Apúntate</a>
+                </div>
+                </p> -->
+            </article>
+
+            <!-- Work -->
+            <article id="traballo" class="panel">
+                <header>
+                    <h2>QUE FACEMOS?</h2>
+                    <hr>
+                    <h3>Coñece o noso traballo</h3>
+                </header>
+                <p>
+                    A Sociedade Xuvenil Galega de Química é unha asociación xuvenil sen ánimo de lucro adicada á
+                    <strong>divulgación da ciencia</strong>,
+                    e máis concretamente da química, en Galicia. Entre os nosos obxectivos está espertar a curiosidade
+                    científica
+                    nos máis cativos e poñer o noso gran de area na erradicación da quimiofobia tan estendida que hai na
+                    nosa sociedade.
+                </p>
+
+                <div class="image full">
+                    <img src="images/lugo.jpg">
+                </div>
+                <p>
+                    A asociación foi fundada en <strong>2018</strong> por un pequeno grupo de amigos comprometidos con
+                    achegar o coñecemento científico á sociedade,
+                    e actualmente somos máis de 40 estudantes de grao, máster e doutoramento implicados neste proxecto.
+                    Ademáis, non somos
+                    só químicos: nas nosas filas contamos tamén con biólogos e farmacéuticos.
+                </p>
+                <div class="image full">
+                    <img src="images/alxinato.jpg">
+                </div>
+                <p>
+                    A nosa sede atópase en Santiago de Compostela. Dende alí movémonos a distintas cidades e vilas de
+                    Galicia para levar os nosos
+                    <strong>obradoiros a colexios e institutos</strong>. Nestas actividades, aparecemos con experimentos
+                    e demostracións para abraiar a
+                    alumnado e profes por igual, e de paso explicar conceptos sinxelos de química.
+                </p>
+                <div class="image full">
+                    <img src="images/cromatografia.jpg">
+                </div>
+                <p>
+                    Por outra banda, tamén adoitamos participar en <strong>feiras de ciencia e divulgación</strong>.
+                    Tivemos a sorte de participar nas últimas edicións do
+                    Cullerciencia, o espazo científico das Festas do Barrio de San Pedro en Santiago de Compostela e no
+                    OpenScienceCambre. Nestes
+                    eventos, montamos o noso tenderete con múltiples experiencias científicas para todos os públicos.
+                </p>
+                <p>
+                    Ademáis de levar a cabo unha ampla labor presencialmente, tamén estamos nas redes sociais. Na nosa
+                    conta de <a href="https://www.instagram.com/sxgquimica/" target="_blank">Instagram</a>
+                    subimos infografías, reels e carruseis contando curiosidades e explicando fenómenos relacionados coa
+                    química.
+                </p>
+                <hr>
+                <div class="12u$" style="text-align: center;">
+                    <p>Gústache o que les? Envíanos unha mensaxe e falamos!</p>
+                    <a href="#contacto" class="jumplink button" style="color: #ffffff">Contacta connosco</a>
+                </div>
+
+            </article>
+
+            <!-- Gallery -->
+            <article id="galeria" class="panel">
+                <header>
+                    <h2>GALERÍA</h2>
+                    <hr>
+                </header>
+                <p>
+                    Obradoiros en Colexios: Inspirando Futuros Científicos
+                </p>
+                <div class="gallery-container">
+                    <div class="slides" id='slides1'>
+                        <img src="images/galeria/Obradoiros-1.jpeg" alt="Obradoiros 1">
+                        <img src="images/galeria/Obradoiros-2.png" alt="Obradoiros 2">
+                        <img src="images/galeria/Obradoiros-3.jpg" alt="Obradoiros 3">
+                        <img src="images/galeria/Obradoiros-4.png" alt="Obradoiros 4">
+                        <img src="images/galeria/Obradoiros-5.jpg" alt="Obradoiros 5">
+                        <img src="images/galeria/Obradoiros-6.jpg" alt="Obradoiros 6">
+                        <img src="images/galeria/Obradoiros-7.jpg" alt="Obradoiros 7">
+                        <img src="images/galeria/Obradoiros-8.png" alt="Obradoiros 8">
+                        <img src="images/galeria/Obradoiros-9.png" alt="Obradoiros 9">
+                        <img src="images/galeria/Obradoiros-10.png" alt="Obradoiros 10">
+                        <img src="images/galeria/Obradoiros-11.png" alt="Obradoiros 11">
+                        <img src="images/galeria/Obradoiros-12.jpg" alt="Obradoiros 12">
+                        <img src="images/galeria/Obradoiros-13.jpg" alt="Obradoiros 13">
+                        <img src="images/galeria/Obradoiros-14.jpg" alt="Obradoiros 14">
+                        <img src="images/galeria/Obradoiros-15.jpg" alt="Obradoiros 15">
+                        <img src="images/galeria/Obradoiros-16.jpg" alt="Obradoiros 16">
+                        <img src="images/galeria/Obradoiros-17.jpeg" alt="Obradoiros 17">
+                        <img src="images/galeria/Obradoiros-18.jpeg" alt="Obradoiros 18">
+                        <img src="images/galeria/Obradoiros-19.jpeg" alt="Obradoiros 19">
+                        <img src="images/galeria/Obradoiros-20.png" alt="Obradoiros 20">
+                        <img src="images/galeria/Obradoiros-21.png" alt="Obradoiros 21">
+                    </div>
+                    <button class="prev" onclick="moveSlides(-1, 'slides1')">&#10094;</button>
+                    <button class="next" onclick="moveSlides(1, 'slides1')">&#10095;</button>
+                </div>
+                <p>
+                </p>
+                <p>
+                    Feiras Científicas: Explorando a Ciencia en Acción
+                </p>
+                <div class="gallery-container">
+                    <div class="slides" id="slides2">
+                        <img src="images/galeria/Feiras-16.jpg" alt="Feiras 16">
+                        <img src="images/galeria/Feiras-6.jpg" alt="Feiras 6">
+                        <img src="images/galeria/Feiras-15.jpeg" alt="Feiras 15">
+                        <img src="images/galeria/Feiras-1.png" alt="Feiras 1">
+                        <img src="images/galeria/Feiras-2.jpeg" alt="Feiras 2">
+                        <img src="images/galeria/Feiras-3.jpg" alt="Feiras 3">
+                        <img src="images/galeria/Feiras-4.jpeg" alt="Feiras 4">
+                        <img src="images/galeria/Feiras-5.png" alt="Feiras 5">
+                        <img src="images/galeria/Feiras-7.jpg" alt="Feiras 7">
+                        <img src="images/galeria/Feiras-8.jpg" alt="Feiras 8">
+                        <img src="images/galeria/Feiras-9.jpeg" alt="Feiras 9">
+                        <img src="images/galeria/Feiras-10.jpg" alt="Feiras 10">
+                        <img src="images/galeria/Feiras-11.jpg" alt="Feiras 11">
+                        <img src="images/galeria/Feiras-12.jpg" alt="Feiras 12">
+                        <img src="images/galeria/Feiras-13.jpeg" alt="Feiras 13">
+                        <img src="images/galeria/Feiras-14.jpeg" alt="Feiras 14">
+                        <img src="images/galeria/Feiras-17.jpg" alt="Feiras 17">
+                        <img src="images/galeria/Feiras-18.jpg" alt="Feiras 18">
+                    </div>
+                    <button class="prev" onclick="moveSlides(-1, 'slides2')">&#10094;</button>
+                    <button class="next" onclick="moveSlides(1, 'slides2')">&#10095;</button>
+                </div>
+                <p>
+                </p>
+                <p>
+                    Eventos: Loitando por un Futuro
+                </p>
+                <div class="gallery-container">
+                    <div class="slides" id="slides3">
+                        <img src="images/galeria/Eventos_OFDL-1.jpg" alt="Eventos 1">
+                        <img src="images/galeria/Eventos_OFDL-2.jpg" alt="Eventos 2">
+                        <img src="images/galeria/Eventos_OFDL-3.JPG" alt="Eventos 3">
+                        <img src="images/galeria/Eventos_OFDL-4.jpg" alt="Eventos 4">
+                        <img src="images/galeria/Eventos_OFDL-5.JPG" alt="Eventos 5">
+                        <img src="images/galeria/Eventos_OFDL-6.JPG" alt="Eventos 6">
+                    </div>
+                    <button class="prev" onclick="moveSlides(-1, 'slides3')">&#10094;</button>
+                    <button class="next" onclick="moveSlides(1, 'slides3')">&#10095;</button>
+                </div>
+                <p>
+                </p>
+                <p>
+                    Asembleas: Unión para o Progreso Científico
+                </p>
+                <div class="gallery-container">
+                    <div class="slides" id="slides4">
+                        <img src="images/galeria/Asembleas-1.jpg" alt="Asembleas 1">
+                        <img src="images/galeria/Asembleas-2.jpeg" alt="Asembleas 2">
+                        <img src="images/galeria/Asembleas-3.jpeg" alt="Asembleas 3">
+                    </div>
+                    <button class="prev" onclick="moveSlides(-1, 'slides4')">&#10094;</button>
+                    <button class="next" onclick="moveSlides(1, 'slides4')">&#10095;</button>
+                </div>
+            </article>
+
+            <!-- Contact -->
+            <article id="contacto" class="panel">
+                <header>
+                    <h2>CONTACTA CONNOSCO</h2>
+                    <hr>
+                    <h3>Escoitámoste</h3>
+                </header>
+                <p>Gustaríache ter un <strong>obradoiro no teu colexio</strong>? Tes algunha <strong>idea</strong>,
+                    <strong>comentario</strong>, <strong>suxerencia</strong> que poidamos satisfacer? Quererías entrar a
+                    formar
+                    parte do noso equipo e <strong>participar</strong> nas nosas actividades dende dentro? Para calquera
+                    cousiña
+                    que desexes, podes poñerte en contacto connosco a través deste formulario (ou escribindo
+                    directamente a <a href="mailto:sxgquimica@gmail.com">sxgquimica@gmail.com</a> se o prefires).
+                <p>
+                <p style="color: red;"><strong>Sentímolo moito, pero actualmente estamos á capacidade máxima para os
+                        Obradoiros do actual curso académico.
+                        As solicitudes recibidas a partir de agora serán consideradas para o primeiro semestre do curso
+                        2025/2026. Moitas grazas pola vosa comprensión!</strong>
+                </p>
+                <form action="https://formspree.io/sxgquimica@gmail.com" method="post">
+                    <div>
+                        <div class="row">
+                            <div class="6u 12u$(mobile)">
+                                <input type="text" required name="name" placeholder="Nome" />
+                            </div>
+                            <div class="6u$ 12u$(mobile)">
+                                <input type="text" required name="email" placeholder="Email" />
+                            </div>
+                            <div class="12u$">
+                                <input type="text" required name="subject" placeholder="Asunto" />
+                            </div>
+                            <div class="12u$">
+                                <textarea name="message" required placeholder="Mensaxe" rows="8"></textarea>
+                            </div>
+                            <div class="12u$">
+                                <input type="checkbox" required name="Checkbox name" /> Estou de acordo con que a SXGQ
+                                empregue a miña
+                                dirección de email para poñerse en contacto conmigo.
+                            </div>
+                            <div class="12u$">
+                                <input type="submit" name="send" value="Enviar mensaxe" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <p class=small>
+                    Cando nos envías unha mensaxe a través de este formulario, o teu nome e dirección de email
+                    empréganse
+                    exclusivamente para que podamos poñernos en contacto contigo e contestarche. Aquí tes dispoñible a
+                    nosa <a href="./politica-privacidade.pdf" rel="nofollow" title="Privacy &amp; Cookies Policy"
+                        target="_blank">política de privacidade</a>, por se queres ler máis.
+                </p>
+            </article>
+
+            <!-- Calendario -->
+            <article id="calendario" class="panel">
+                <header>
+                    <h2>Calendario</h2>
+                    <hr>
+                    <h3>Atopa aquí todos os nosos eventos.<h3>
+                </header>
+                <div class="responsive-iframe-container big-container">
+                    <iframe
+                        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showTitle=0&showCalendars=0&showTz=0&src=bXI2OW00b2pzbW8wNW4ycjBibXA3OHQ3ZnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%238E24AA"
+                        style="border-width:0" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <div class="responsive-iframe-container small-container">
+                    <iframe
+                        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showTitle=0&showCalendars=0&showTz=0&src=bXI2OW00b2pzbW8wNW4ycjBibXA3OHQ3ZnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%238E24AA"
+                        style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </article>
 
         </div>
-        <div class="bg-video">
-          <video preload="auto" autoplay muted playsinline loop src="images/video-web.mp4" type="video/mp4">
-          </video>
+        <!-- Footer -->
+        <div id="footer">
+            <ul class="copyright">
+                <li>&copy; SXGQ</li>
+                <li>Design: <a href="https://html5up.net">HTML5 UP</a> + Ó.</li>
+                <li><a href="./politica-privacidade.pdf" rel="nofollow" title="Privacy &amp; Cookies Policy"
+                        target="_blank">Política de privacidade e cookies</a></li>
+            </ul>
         </div>
-      </article>
-
-       <!-- Mapa -->
-      <article id="mapa" class="panel">	      
-        <header>
-          <h2>ROTEIRO CARTOGRÁFICO</h2>
-          <hr>
-          <h3>Onde estivo a Sociedade?</h3>
-        </header>
-	<p>
-	Descubre os lugares que a nosa Sociedade visitou no noso mapa interactivo. Cada marcador simboliza 
-		un Obradoiro e están resaltados con diferentes cores que representan a data (dende a nosa
-		inauguración en 2018). Explora connosco os recunchos que marcamos no noso percorrido!
-	</p>
-        <p style="text-align: center;">
-	  <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1nkS-dBqM8mobvCTjBLKEjk_Kdt61yvw&ehbc=2E312F&noprof=1" width="100%" height="480"></iframe>
-        </p>
-      </article>
-	    
-      <!-- Nós -->
-      <article id="nos" class="panel">
-        <header>
-          <h2>QUEN SOMOS?</h2>
-          <hr>
-          <h3>Descubre a nosa estrutura!</h3>
-        </header>
-        <p>
-          A SXGQ está integrada por persoas con grande interese na ciencia. Moitos de nós somos estudantes
-          universitarios vinculados á área da química. Tod@s temos en común unha grande paixón pola química e polo
-          galego!
-        </p>
-        <p>
-          Cada ano máis xoves con interese na ciencia se incorporan ao noso proxecto. Cada un de nós xoga un rol
-          crucial, e organizámonos en grupos de traballo coordinados polos membros da directiva. Queres coñecernos?
-          Continúa lendo!
-        </p>
-
-        <p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/presi.jpg">
-          </span>
-        <h3><strong>Yeray Folgar</strong>, presidente</h3>
-        <p class="description">Estudante de doutoramento en Ciencia e Tecnoloxía Química na USC. Centrado na entrega de
-          compostos bioactivos a células, desenvolve a súa actividade investigadora en química biolóxica no CiQUS.
-          Ademais da súa paixón pola divulgación científica, tamén disfruta coleccionando insectos, minerais e fósiles.
-	</p>
-        <hr>
-        </p>
-
-        <p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/vicepresi.jpg">
-          </span>
-        <h3><strong>Alejandro Rodríguez</strong>, vicepresidente</h3>
-        <p class="description">Estudante de Química e Bioloxía na USC. Inquedo e curioso, gústalle preguntarse o porqué
-          das cousas. Desfruta xermolando sementes e creando cousas coas maos. Ama as abellas.
-	</p>
-        <hr>
-        </p>
-
-        <p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/secretario.jpeg">
-          </span>
-        <h3><strong>Patricia Fulias</strong>, secretaria</h3>
-        <p class="description">Estudante de doutoramento en Ciencia e Tecnoloxía Química na USC. O seu traballo céntrase 
-	no desenvolvemento de novos fluoróforos e tamén no estudo do novos transportadores celulares no CiQUS. Nos seus
-	ratos libres gústalle bailar, aprender sobre política social e fedellar no mundo da repostería.
-        </p>
-        <hr>
-        </p>
-
-        <p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/tesoureiro.jpg">
-          </span>
-        <h3><strong>Ana Seijas</strong>, tesoureira</h3>
-        <p class="description">Tras rematar o dobre grao en Bioloxía e Química saltou a un mestrado de Nanobiofotónica Molecular. Encántalle pasar tempo no laboratorio
-          cacharreando. Gústalle achegar a ciencia á sociedade. Apaixoada da natureza e da fotografía.</p>
-        <hr>
-        </p>
-
-        <p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/vogal1.jpg">
-          </span>
-        <h3><strong>Adriana Barros</strong>, vogal</h3>
-        <p class="description"> De Santiago de Compostela e graduada en Química. Encántalle a ciencia como ferramenta
-          para explicar fenómenos cotiás e mellorar o noso día a día. Namorada do mar e aficionada á natación.</p>
-        <hr>
-        </p>
-
-        <p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/vogal2.jpg">
-          </span>
-        <h3><strong>Bea Lista</strong>, vogal</h3>
-        <p class="description">De Malpica de Bergantiños. Graduada en Bioloxía e en Química. Desfruto moitísimo o
-		proceso que leva consigo a divulgación científica. Ademais da ciencia, encántame o deporte.
-		Concretamente, xogo ao fútbol sala.
-	</p>
-        <hr>
-        </p>
-
-	<p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/vogal3.jpeg">
-          </span>
-        <h3><strong>Marta Vélez</strong>, vogal</h3>
-        <p class="description">Graduada en química e bioloxía e actualmente cursando o máster de profesorado.
-	Leva dende pequena interesada pola ciencia e  agora quere compartir a súa paixón cos demais.
-	</p>
-        <hr>
-        </p>
-	      
-	<p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/vogal4.jpeg">
-          </span>
-        <h3><strong>Sergio Serantes</strong>, vogal</h3>
-        <p class="description">Graduado en Bioloxía e Química pola Universidade de Santiago de Compostela, mestrado en Biotecnoloxía Molecular pola Universidade de Barcelona.
-		Estudante de doutoramento en Ciencia e Tecnoloxía Química, avaliando as propiedades antitumorais de estruturas peptídicas supramoleculares.
-	</p>
-        <hr>
-        </p>
-	
-
-        <p class="team-profile">
-          <span class="img-container img-circle">
-            <img src="images/soci.jpg">
-          </span>
-        <h3><strong>...e moit@s máis!</strong></h3>
-
-        <p class="description">A directiva é importante para a coordinación, pero no laboratorio e na rúa tod@s
-          aportamos por igual. A Soci está chea de grandes persoas coas que podes traballar a gusto, aprender moitísimo
-          e pasalo de marabilla!</p>
-        <hr>
-        <div class="12u$" style="text-align: center;">
-          <p>Quererías formar parte do noso equipo? Escríbenos un email presentándote!
-          </p>
-          <a href="#contacto" class="jumplink button" style="color: #ffffff;">Apúntate</a>
-        </div>
-        </p>
-      </article>
-
-      <!-- Work -->
-      <article id="traballo" class="panel">
-        <header>
-          <h2>QUE FACEMOS?</h2>
-          <hr>
-          <h3>Coñece o noso traballo</h3>
-        </header>
-        <p>
-          A Sociedade Xuvenil Galega de Química é unha asociación xuvenil sen ánimo de lucro adicada á <strong>divulgación da ciencia</strong>,
-		e máis concretamente da química, en Galicia. Entre os nosos obxectivos está espertar a curiosidade científica
-		nos máis cativos e poñer o noso gran de area na erradicación da quimiofobia tan estendida que hai na nosa sociedade.
-        </p>
-	      
-        <div class="image full">
-          <img src="images/lugo.jpg">
-        </div>
-        <p>
-          A asociación foi fundada en <strong>2018</strong> por un pequeno grupo de amigos comprometidos con achegar o coñecemento científico á sociedade,
-		e actualmente somos máis de 40 estudantes de grao, máster e doutoramento implicados neste proxecto. Ademáis, non somos
-		só químicos: nas nosas filas contamos tamén con biólogos e farmacéuticos.
-        </p>
-        <div class="image full">
-          <img src="images/alxinato.jpg">
-        </div>
-        <p>
-          A nosa sede atópase en Santiago de Compostela. Dende alí movémonos a distintas cidades e vilas de Galicia para levar os nosos
-		<strong>obradoiros a colexios e institutos</strong>. Nestas actividades, aparecemos con experimentos e demostracións para abraiar a
-		alumnado e profes por igual, e de paso explicar conceptos sinxelos de química.
-        </p>
-        <div class="image full">
-          <img src="images/cromatografia.jpg">
-        </div>
-        <p>
-          Por outra banda, tamén adoitamos participar en <strong>feiras de ciencia e divulgación</strong>. Tivemos a sorte de participar nas últimas edicións do
-		Cullerciencia, o espazo científico das Festas do Barrio de San Pedro en Santiago de Compostela e no OpenScienceCambre. Nestes
-		eventos, montamos o noso tenderete con múltiples experiencias científicas para todos os públicos.
-        </p>
-        <p>
-          Ademáis de levar a cabo unha ampla labor presencialmente, tamén estamos nas redes sociais. Na nosa conta de <a href="https://www.instagram.com/sxgquimica/" target="_blank">Instagram</a>
-		subimos infografías, reels e carruseis contando curiosidades e explicando fenómenos relacionados coa química.
-        </p>
-        <hr>
-        <div class="12u$" style="text-align: center;">
-          <p>Gústache o que les? Envíanos unha mensaxe e falamos!</p>
-          <a href="#contacto" class="jumplink button" style="color: #ffffff">Contacta connosco</a>
-        </div>
-
-      </article>
-
-      <!-- Gallery -->
-      <article id="galeria" class="panel">
-        <header>
-          <h2>GALERÍA</h2>
-          <hr>
-        </header>
-	      <p>
-		      Obradoiros en Colexios: Inspirando Futuros Científicos
-	      </p>
-<div class="gallery-container">
-    <div class="slides" id='slides1'>
-<img src="images/galeria/Obradoiros-1.jpeg" alt="Obradoiros 1">
-<img src="images/galeria/Obradoiros-2.png" alt="Obradoiros 2">
-<img src="images/galeria/Obradoiros-3.jpg" alt="Obradoiros 3">
-<img src="images/galeria/Obradoiros-4.png" alt="Obradoiros 4">
-<img src="images/galeria/Obradoiros-5.jpg" alt="Obradoiros 5">
-<img src="images/galeria/Obradoiros-6.jpg" alt="Obradoiros 6">
-<img src="images/galeria/Obradoiros-7.jpg" alt="Obradoiros 7">
-<img src="images/galeria/Obradoiros-8.png" alt="Obradoiros 8">
-<img src="images/galeria/Obradoiros-9.png" alt="Obradoiros 9">
-<img src="images/galeria/Obradoiros-10.png" alt="Obradoiros 10">
-<img src="images/galeria/Obradoiros-11.png" alt="Obradoiros 11">
-<img src="images/galeria/Obradoiros-12.jpg" alt="Obradoiros 12">
-<img src="images/galeria/Obradoiros-13.jpg" alt="Obradoiros 13">
-<img src="images/galeria/Obradoiros-14.jpg" alt="Obradoiros 14">
-<img src="images/galeria/Obradoiros-15.jpg" alt="Obradoiros 15">
-<img src="images/galeria/Obradoiros-16.jpg" alt="Obradoiros 16">
-<img src="images/galeria/Obradoiros-17.jpeg" alt="Obradoiros 17">
-<img src="images/galeria/Obradoiros-18.jpeg" alt="Obradoiros 18">
-<img src="images/galeria/Obradoiros-19.jpeg" alt="Obradoiros 19">
-<img src="images/galeria/Obradoiros-20.png" alt="Obradoiros 20">
-<img src="images/galeria/Obradoiros-21.png" alt="Obradoiros 21">
-          </div>
-    <button class="prev" onclick="moveSlides(-1, 'slides1')">&#10094;</button>
-    <button class="next" onclick="moveSlides(1, 'slides1')">&#10095;</button>
-  </div>
-	       <p>
-	      </p>
-        <p>
-		      Feiras Científicas: Explorando a Ciencia en Acción
-	      </p>
-<div class="gallery-container">
-    <div class="slides" id="slides2">
-<img src="images/galeria/Feiras-16.jpg" alt="Feiras 16">
-<img src="images/galeria/Feiras-6.jpg" alt="Feiras 6">
-<img src="images/galeria/Feiras-15.jpeg" alt="Feiras 15">
-<img src="images/galeria/Feiras-1.png" alt="Feiras 1">
-<img src="images/galeria/Feiras-2.jpeg" alt="Feiras 2">
-<img src="images/galeria/Feiras-3.jpg" alt="Feiras 3">
-<img src="images/galeria/Feiras-4.jpeg" alt="Feiras 4">
-<img src="images/galeria/Feiras-5.png" alt="Feiras 5">
-<img src="images/galeria/Feiras-7.jpg" alt="Feiras 7">
-<img src="images/galeria/Feiras-8.jpg" alt="Feiras 8">
-<img src="images/galeria/Feiras-9.jpeg" alt="Feiras 9">
-<img src="images/galeria/Feiras-10.jpg" alt="Feiras 10">
-<img src="images/galeria/Feiras-11.jpg" alt="Feiras 11">
-<img src="images/galeria/Feiras-12.jpg" alt="Feiras 12">
-<img src="images/galeria/Feiras-13.jpeg" alt="Feiras 13">
-<img src="images/galeria/Feiras-14.jpeg" alt="Feiras 14">
-<img src="images/galeria/Feiras-17.jpg" alt="Feiras 17">
-<img src="images/galeria/Feiras-18.jpg" alt="Feiras 18">
-          </div>
-    <button class="prev" onclick="moveSlides(-1, 'slides2')">&#10094;</button>
-    <button class="next" onclick="moveSlides(1, 'slides2')">&#10095;</button>
-  </div>
-	      	       <p>
-	      </p>
-<p>
-		      Eventos: Loitando por un Futuro
-	      </p>
-<div class="gallery-container">
-    <div class="slides" id="slides3">
-<img src="images/galeria/Eventos_OFDL-1.jpg" alt="Eventos 1">
-<img src="images/galeria/Eventos_OFDL-2.jpg" alt="Eventos 2">
-<img src="images/galeria/Eventos_OFDL-3.JPG" alt="Eventos 3">
-<img src="images/galeria/Eventos_OFDL-4.jpg" alt="Eventos 4">
-<img src="images/galeria/Eventos_OFDL-5.JPG" alt="Eventos 5">
-<img src="images/galeria/Eventos_OFDL-6.JPG" alt="Eventos 6">
-          </div>
-    <button class="prev" onclick="moveSlides(-1, 'slides3')">&#10094;</button>
-    <button class="next" onclick="moveSlides(1, 'slides3')">&#10095;</button>
-  </div>
-	       <p>
-	      </p>
-	      <p>
-		      Asembleas: Unión para o Progreso Científico
-	      </p>
-<div class="gallery-container">
-    <div class="slides" id="slides4">
-<img src="images/galeria/Asembleas-1.jpg" alt="Asembleas 1">
-<img src="images/galeria/Asembleas-2.jpeg" alt="Asembleas 2">
-<img src="images/galeria/Asembleas-3.jpeg" alt="Asembleas 3">
-          </div>
-    <button class="prev" onclick="moveSlides(-1, 'slides4')">&#10094;</button>
-    <button class="next" onclick="moveSlides(1, 'slides4')">&#10095;</button>
-  </div>
-      </article>
-
-      <!-- Contact -->
-      <article id="contacto" class="panel">
-        <header>
-          <h2>CONTACTA CONNOSCO</h2>
-          <hr>
-          <h3>Escoitámoste</h3>
-        </header>
-        <p>Gustaríache ter un <strong>obradoiro no teu colexio</strong>? Tes algunha <strong>idea</strong>,
-          <strong>comentario</strong>, <strong>suxerencia</strong> que poidamos satisfacer? Quererías entrar a formar
-          parte do noso equipo e <strong>participar</strong> nas nosas actividades dende dentro? Para calquera cousiña
-          que desexes, podes poñerte en contacto connosco a través deste formulario (ou escribindo directamente a <a
-            href="mailto:sxgquimica@gmail.com">sxgquimica@gmail.com</a> se o prefires).
-        <p>
-	<p style="color: red;"><strong>Sentímolo moito, pero actualmente estamos á capacidade máxima para os Obradoiros do actual curso académico.
-		As solicitudes recibidas a partir de agora serán consideradas para o primeiro semestre do curso 2025/2026. Moitas grazas pola vosa comprensión!</strong>
-	</p>
-        <form action="https://formspree.io/sxgquimica@gmail.com" method="post">
-          <div>
-            <div class="row">
-              <div class="6u 12u$(mobile)">
-                <input type="text" required name="name" placeholder="Nome" />
-              </div>
-              <div class="6u$ 12u$(mobile)">
-                <input type="text" required name="email" placeholder="Email" />
-              </div>
-              <div class="12u$">
-                <input type="text" required name="subject" placeholder="Asunto" />
-              </div>
-              <div class="12u$">
-                <textarea name="message" required placeholder="Mensaxe" rows="8"></textarea>
-              </div>
-              <div class="12u$">
-                <input type="checkbox" required name="Checkbox name" /> Estou de acordo con que a SXGQ empregue a miña
-                dirección de email para poñerse en contacto conmigo.
-              </div>
-              <div class="12u$">
-                <input type="submit" name="send" value="Enviar mensaxe" />
-              </div>
-            </div>
-          </div>
-        </form>
-        <p class=small>
-          Cando nos envías unha mensaxe a través de este formulario, o teu nome e dirección de email empréganse
-          exclusivamente para que podamos poñernos en contacto contigo e contestarche. Aquí tes dispoñible a nosa <a
-            href="./politica-privacidade.pdf" rel="nofollow" title="Privacy &amp; Cookies Policy"
-            target="_blank">política de privacidade</a>, por se queres ler máis.
-        </p>
-      </article>
-
-      <!-- Calendario -->
-      <article id="calendario" class="panel">
-        <header>
-          <h2>Calendario</h2>
-          <hr>
-          <h3>Atopa aquí todos os nosos eventos.<h3>
-        </header>
-        <div class="responsive-iframe-container big-container">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showTitle=0&showCalendars=0&showTz=0&src=bXI2OW00b2pzbW8wNW4ycjBibXA3OHQ3ZnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%238E24AA"
-            style="border-width:0" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
-        </div>
-        <div class="responsive-iframe-container small-container">
-          <iframe
-            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FMadrid&showPrint=0&showTabs=0&showTitle=0&showCalendars=0&showTz=0&src=bXI2OW00b2pzbW8wNW4ycjBibXA3OHQ3ZnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%238E24AA"
-            style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-      </article>
-
     </div>
-    <!-- Footer -->
-    <div id="footer">
-      <ul class="copyright">
-        <li>&copy; SXGQ</li>
-        <li>Design: <a href="https://html5up.net">HTML5 UP</a> + Ó.</li>
-        <li><a href="./politica-privacidade.pdf" rel="nofollow" title="Privacy &amp; Cookies Policy"
-            target="_blank">Política de privacidade e cookies</a></li>
-      </ul>
-    </div>
-  </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="assets/js/gallery.js"></script>
-  <script src="assets/js/skel.min.js"></script>
-  <script src="assets/js/skel-viewport.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/compliance-cookie.js"></script>
-  <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-  <script src="assets/js/main.js"></script>
-  <script>
-    var slideIndex = [1, 1, 1];
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="assets/js/gallery.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/skel-viewport.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/compliance-cookie.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script>
+        var slideIndex = [1, 1, 1];
 
-    function showSlides(n, slideshowIndex) {
-      var i;
-      var slides = document.getElementsByClassName(slideshowIndex);
-      if (n > slides.length) {slideIndex[slideshowIndex] = 1} 
-      if (n < 1) {slideIndex[slideshowIndex] = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none"; 
-      }
-      slides[slideIndex[slideshowIndex]-1].style.display = "block"; 
-    }
+        function showSlides(n, slideshowIndex) {
+            var i;
+            var slides = document.getElementsByClassName(slideshowIndex);
+            if (n > slides.length) { slideIndex[slideshowIndex] = 1 }
+            if (n < 1) { slideIndex[slideshowIndex] = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex[slideshowIndex] - 1].style.display = "block";
+        }
 
-function moveSlides(n, slideshowId) {
-    var slideContainer = document.getElementById(slideshowId);
-    var currentScrollLeft = slideContainer.scrollLeft;
-    var slideWidth = slideContainer.clientWidth;
-    slideContainer.scrollLeft = currentScrollLeft + (slideWidth * n);
-}
+        function moveSlides(n, slideshowId) {
+            var slideContainer = document.getElementById(slideshowId);
+            var currentScrollLeft = slideContainer.scrollLeft;
+            var slideWidth = slideContainer.clientWidth;
+            slideContainer.scrollLeft = currentScrollLeft + (slideWidth * n);
+        }
 
-function openOrCloseFullImg(src) {
-    var fullImgBox = document.getElementById("fullImgBox");
-    var fullImg = document.getElementById("fullImg");
-    
-    // Si la imagen está ya abierta y es la misma que la que se está intentando abrir, entonces la cerramos
-    if (fullImgBox.style.display === "block" && fullImg.src === src) {
-        closeFullImg();
-    } else {
-        fullImg.src = src;
-        fullImgBox.style.display = "block";
-    }
-}
-  </script>
-		  
+        function openOrCloseFullImg(src) {
+            var fullImgBox = document.getElementById("fullImgBox");
+            var fullImg = document.getElementById("fullImg");
+
+            // Si la imagen está ya abierta y es la misma que la que se está intentando abrir, entonces la cerramos
+            if (fullImgBox.style.display === "block" && fullImg.src === src) {
+                closeFullImg();
+            } else {
+                fullImg.src = src;
+                fullImgBox.style.display = "block";
+            }
+        }
+    </script>
+
 </body>
 
 </html>
