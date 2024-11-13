@@ -930,7 +930,7 @@ select {
 
 strong,
 b {
-    font-weight: 400;
+    font-weight: 600;
 }
 
 h1,
@@ -1489,10 +1489,6 @@ a.button {
 
 /* Nos */
 
-#nos .row>* {
-    margin-bottom: 1em;
-}
-
 #nos img {
     width: 100%;
 }
@@ -1503,12 +1499,17 @@ a.button {
     object-fit: cover;
 }
 
+@media only screen and (max-width: 768px) {
+    .card-img-top {
+        min-height: 250px;
+    }
+}
+
 #nos p.description {
     width: 100%;
     display: inline-block;
     font-size: 0.8em;
-    line-height: 130%;
-    /*padding-left: 18%;*/
+    line-height: 160%;
 }
 
 #nos h4.name-mini {
@@ -2142,8 +2143,7 @@ a.button {
     /* Nos */
 
     #nos p.description {
-        display: inline;
-        width: auto;
+        font-size: 1em;
     }
 
     /* Footer */
