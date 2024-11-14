@@ -752,7 +752,7 @@
 
 body::after{
 position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
-content:url("images/benvida.png") url("images/nos1.jpeg") url("images/nos.png") url("images/contacto.png") url("images/traballo.png") url("images/galeria.png");
+content:url("images/benvida.png") url("images/mapa.png") url("images/nos.png") url("images/contacto.png") url("images/traballo.png") url("images/galeria.png");
 }
 
 	body {
