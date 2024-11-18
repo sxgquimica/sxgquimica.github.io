@@ -1,20 +1,22 @@
-let currentSlide = 0;
+let currentIndex = 0;  // Índice para rastrear la posición actual
 
-function moveSlides(direction, slidesId) {
-    const slides = document.getElementById(slidesId);
-    const totalSlides = slides.children.length;
+function moveSlides(direction) {
+    const slides = document.getElementById('slides1');
+    const totalSlides = slides.children.length; // Número total de imágenes
 
-       currentSlide += direction;
+    // Calculamos el ancho de una imagen para mover el contenedor
+    const slideWidth = slides.children[0].offsetWidth;
 
-    // Si el desplazamiento es hacia atrás
-    if (currentSlide < 0) {
-        currentSlide = totalSlides - 3; // Vuelve al final si estamos al principio
-    } 
-    // Si el desplazamiento es hacia adelante
-    else if (currentSlide >= totalSlides - 2) { // 'totalSlides - 2' porque mostramos 3 imágenes
-        currentSlide = 0; // Vuelve al principio si estamos al final
+    // Actualizamos el índice basado en la dirección
+    currentIndex += direction;
+
+    // Aseguramos que el índice esté dentro del rango válido (0 a totalSlides - 3)
+    if (currentIndex < 0) {
+        currentIndex = totalSlides - 3;
+    } else if (currentIndex > totalSlides - 3) {
+        currentIndex = 0;
     }
 
-    // Mueve el carrusel solo una imagen a la vez
-    slides.style.transform = `translateX(-${currentSlide * 33.3}%)`; // 33.3% por cada imagen
+    // Desplazamos el contenedor de las imágenes
+    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
