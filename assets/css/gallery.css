@@ -12,7 +12,7 @@
 }
 
 .slides img {
-    width: 100%; /* Asegura que cada imagen ocupe el 100% del contenedor */
+    width: 33.3%; /* Asegura que cada imagen ocupe el 100% del contenedor */
     object-fit: cover;
 }
 
