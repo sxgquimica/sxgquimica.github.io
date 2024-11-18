@@ -1487,15 +1487,6 @@ a.button {
     /*padding-left: 18%;*/
 }
 
-/* Ajustes para dispositivos móviles */
-@media only screen and (max-width: 768px) {
-    #mapa iframe {
-        width: 100%;
-        height: 50vh; /* Ajusta la altura del mapa, usa un porcentaje del alto de la ventana */
-        max-height: 480px; /* Establece un límite de altura máxima */
-        border: none; /* Elimina el borde si no lo necesitas */
-    }
-}
 
 /* Nos */
 
