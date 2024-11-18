@@ -1,20 +1,20 @@
-/* Estilo para el contenedor de la galería */
+/* Contenedor principal del carrousel */
 .gallery-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden; /* Para ocultar las imágenes que se salen del contenedor */
+    position: relative;  /* Para poder posicionar los botones sobre el carrousel */
+    width: 100%;  /* Asegura que el contenedor ocupe todo el ancho disponible */
+    overflow: hidden;  /* Oculta las imágenes que se desbordan */
 }
 
-/* Asegura que solo se muestre tres imágenes a la vez */
+/* Contenedor de las imágenes */
 .slides {
-    display: flex;
-    transition: transform 0.3s ease-in-out; /* Suaviza la transición */
-    width: 33.3%; /* 3 imágenes a la vez */
+    display: flex;  /* Para alinear las imágenes en una fila */
+    transition: transform 0.5s ease;  /* Para dar efecto de deslizamiento suave */
 }
 
+/* Cada imagen */
 .slides img {
-    width: 33.3%; /* Cada imagen ocupa un tercio del contenedor */
-    object-fit: cover;
+    width: 33.33%;  /* Cada imagen ocupará un tercio del ancho del contenedor */
+    height: auto;  /* Mantiene la proporción de la imagen */
 }
 
 /* Estilo para los botones de navegación */
