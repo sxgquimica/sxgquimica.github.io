@@ -19,8 +19,9 @@ function updateSlides(slideshowId) {
     slides.forEach(slide => slide.style.display = 'none');
     
     // Muestra las 3 imágenes correspondientes
-    for (let i = start; i < end && i < totalSlides; i++) {
-        slides[i].style.display = 'block';
+    for (let i = start; i < end; i++) {
+        const index = i % totalSlides; // Aquí usamos el operador módulo para crear el bucle
+        slides[index].style.display = 'block';
     }
 }
 
@@ -32,12 +33,11 @@ function moveSlides(direction, slideshowId) {
     // Actualiza el índice actual según la dirección
     currentIndex[slideshowId] += direction;
 
-    // Limita el movimiento: no puede ser menor que 0 o mayor que el número de imágenes - 3
+    // Usamos el operador módulo para crear el bucle infinito
     if (currentIndex[slideshowId] < 0) {
-        currentIndex[slideshowId] = 0;
-    }
-    if (currentIndex[slideshowId] + 3 > totalSlides) {
         currentIndex[slideshowId] = totalSlides - 3;
+    } else if (currentIndex[slideshowId] + 3 > totalSlides) {
+        currentIndex[slideshowId] = 0;
     }
 
     updateSlides(slideshowId);
