@@ -20,7 +20,7 @@ function updateSlides(slideshowId) {
     
     // Muestra las 3 imágenes correspondientes
     for (let i = start; i < end; i++) {
-        const index = i % totalSlides; // El operador módulo crea un bucle continuo
+        const index = (i % totalSlides); // El operador módulo crea un bucle continuo
         slides[index].style.display = 'block';
     }
 }
@@ -31,18 +31,12 @@ function moveSlides(direction, slideshowId) {
     const totalSlides = slides.length;
 
     // Actualiza el índice actual según la dirección
-    if (direction === 1) {
-        // Movimiento hacia la derecha: avanzar una posición
-        currentIndex[slideshowId]++;
-    } else if (direction === -1) {
-        // Movimiento hacia la izquierda: retroceder una posición
-        currentIndex[slideshowId]--;
-    }
+    currentIndex[slideshowId] += direction;
 
     // Usamos el operador módulo para hacer que el carrusel sea cíclico
     if (currentIndex[slideshowId] < 0) {
-        currentIndex[slideshowId] = totalSlides - 3; // Cuando llega al principio, vuelve al final
-    } else if (currentIndex[slideshowId] + 3 > totalSlides) {
+        currentIndex[slideshowId] = totalSlides - 1; // Cuando llega al principio, vuelve al final
+    } else if (currentIndex[slideshowId] >= totalSlides) {
         currentIndex[slideshowId] = 0; // Cuando llega al final, vuelve al principio
     }
 
