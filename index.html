@@ -656,26 +656,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/gallery.js"></script>
     <script>
-	    function moveSlides(direction) {
-        const slideContainer = document.getElementById("slides");
-        const slideCount = slideContainer.children.length;
-        const slideWidth = slideContainer.children[0].offsetWidth; // Ancho de una imagen
-        const currentTransform = Math.abs(parseInt(slideContainer.style.transform.replace('translateX(', '').replace('px)', '')) || 0);
-
-        // Calcula el nuevo desplazamiento
-        let newTransform = currentTransform + direction * slideWidth;
-
-        // Limitar el desplazamiento para no exceder los límites
-        if (newTransform < 0) {
-            newTransform = 0; // Si está en el inicio, no mueve más
-        }
-        if (newTransform > (slideCount - 3) * slideWidth) {
-            newTransform = (slideCount - 3) * slideWidth; // Si hay más de 3 imágenes, no deja mover más
-        }
-
-        // Aplica el desplazamiento
-        slideContainer.style.transform = `translateX(-${newTransform}px)`;
+	 function moveSlides(n, slideId) {
+    var slides = document.getElementById(slideId);
+    var images = slides.getElementsByTagName('img');
+    var currentIndex = Array.from(images).findIndex(image => image.style.display !== 'none');
+    
+    // Si no se encuentra ninguna imagen visible, empezamos desde el principio
+    if (currentIndex === -1) {
+      currentIndex = 0;
     }
+
+    // Ocultamos la imagen actual
+    images[currentIndex].style.display = 'none';
+
+    // Calculamos el nuevo índice
+    var newIndex = (currentIndex + n + images.length) % images.length;
+
+    // Mostramos la nueva imagen
+    images[newIndex].style.display = 'block';
+  }
+
+  // Inicializar todas las imágenes a ocultarse excepto la primera
+  window.onload = function() {
+    var allSlides = document.querySelectorAll('.slides');
+    allSlides.forEach(function(slides) {
+      var images = slides.getElementsByTagName('img');
+      Array.from(images).forEach(function(image, index) {
+        if (index > 0) {
+          image.style.display = 'none';
+        }
+      });
+    });
+  };
 </script>
     <script src="assets/js/skel.min.js"></script>
     <script src="assets/js/skel-viewport.min.js"></script>
