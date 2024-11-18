@@ -3,18 +3,28 @@ function moveSlides(direction, carouselId) {
     const carousel = document.getElementById(carouselId);
     const slides = carousel.querySelector('.slides');
     const slideCount = slides.children.length;
-    const slideWidth = slides.children[0].offsetWidth; // Obtener el ancho de cada imagen
-    const currentTransform = Math.abs(parseInt(slides.style.transform.replace('translateX(', '').replace('px)', '')) || 0);
+
+    // Asegurarse de que las imágenes están cargadas
+    const slideWidth = slides.children[0]?.offsetWidth || 0;
+    if (!slideWidth) {
+        console.error('Error: Las imágenes no están cargadas correctamente.');
+        return;
+    }
+
+    const currentTransform = Math.abs(parseInt(slides.style.transform?.match(/-?\d+/)?.[0]) || 0);
+
+    // Calcular el número de imágenes visibles dinámicamente
+    const visibleSlides = Math.floor(carousel.offsetWidth / slideWidth);
 
     // Calcular el nuevo índice
     let newTransform = currentTransform + direction * slideWidth;
 
-    // Limitar la cantidad de desplazamiento para que no se salga del rango de las imágenes
+    // Limitar el desplazamiento dentro del rango permitido
     if (newTransform < 0) {
         newTransform = 0;
     }
-    if (newTransform > (slideCount - 3) * slideWidth) { // Si hay más de 3 imágenes, limitar el desplazamiento
-        newTransform = (slideCount - 3) * slideWidth;
+    if (newTransform > (slideCount - visibleSlides) * slideWidth) {
+        newTransform = (slideCount - visibleSlides) * slideWidth;
     }
 
     // Aplicar el nuevo desplazamiento
