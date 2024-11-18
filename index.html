@@ -539,18 +539,20 @@ let currentSlide = 0;
 function moveSlides(direction, slidesId) {
     const slides = document.getElementById(slidesId);
     const totalSlides = slides.children.length;
-    const slidesPerView = 3; // Número de imágenes visibles a la vez
 
     currentSlide += direction;
 
+    // Controlar el desplazamiento para que se mantenga dentro de los límites
     if (currentSlide < 0) {
-        currentSlide = totalSlides - slidesPerView; // Si llegamos al inicio, va al final
-    } else if (currentSlide > totalSlides - slidesPerView) {
-        currentSlide = 0; // Si llegamos al final, vuelve al principio
+        currentSlide = totalSlides - 1; // Vuelve al final si estamos al principio
+    } else if (currentSlide >= totalSlides) {
+        currentSlide = 0; // Vuelve al principio si estamos al final
     }
 
-    slides.style.transform = `translateX(-${currentSlide * 33.33}%)`; // Mueve el carrusel
+    // Mueve el carrusel solo una imagen a la vez
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`; // 100% por imagen
 }
+
 </script>
 
             <!-- Mapa -->
