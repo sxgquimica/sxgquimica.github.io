@@ -5,14 +5,15 @@
     overflow: hidden; /* Para ocultar las imágenes que se salen del contenedor */
 }
 
-/* Asegura que solo se muestre una imagen a la vez */
+/* Asegura que solo se muestre tres imágenes a la vez */
 .slides {
     display: flex;
     transition: transform 0.3s ease-in-out; /* Suaviza la transición */
+    width: 300%; /* 3 imágenes a la vez */
 }
 
 .slides img {
-    width: 33.3%; /* Asegura que cada imagen ocupe el 100% del contenedor */
+    width: 33.3%; /* Cada imagen ocupa un tercio del contenedor */
     object-fit: cover;
 }
 
