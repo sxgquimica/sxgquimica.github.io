@@ -1495,13 +1495,13 @@ a.button {
 
 .card-img-top {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
 }
 
 @media only screen and (max-width: 768px) {
     .card-img-top {
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 3 / 2;
     }
 }
 
