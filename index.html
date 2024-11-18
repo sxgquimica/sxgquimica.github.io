@@ -656,38 +656,56 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/gallery.js"></script>
     <script>
-	 function moveSlides(n, slideId) {
-    var slides = document.getElementById(slideId);
-    var images = slides.getElementsByTagName('img');
-    var currentIndex = Array.from(images).findIndex(image => image.style.display !== 'none');
-    
-    // Si no se encuentra ninguna imagen visible, empezamos desde el principio
-    if (currentIndex === -1) {
-      currentIndex = 0;
+    // Crea un objeto para almacenar el índice actual de cada carrusel
+    let currentIndex = {
+        'slides1': 0,
+        'slides2': 0,
+        'slides3': 0,
+        'slides4': 0
+    };
+
+    // Función para actualizar las imágenes mostradas en el carrusel
+    function updateSlides(slideshowId) {
+        const slides = document.querySelectorAll(`#${slideshowId} img`);
+        const totalSlides = slides.length;
+        let start = currentIndex[slideshowId];
+        let end = start + 3;
+
+        // Oculta todas las imágenes
+        slides.forEach(slide => slide.style.display = 'none');
+        
+        // Muestra las 3 imágenes correspondientes
+        for (let i = start; i < end && i < totalSlides; i++) {
+            slides[i].style.display = 'block';
+        }
     }
 
-    // Ocultamos la imagen actual
-    images[currentIndex].style.display = 'none';
+    // Función para mover las imágenes dentro de cada carrusel
+    function moveSlides(direction, slideshowId) {
+        const slides = document.querySelectorAll(`#${slideshowId} img`);
+        const totalSlides = slides.length;
 
-    // Calculamos el nuevo índice
-    var newIndex = (currentIndex + n + images.length) % images.length;
+        // Actualiza el índice actual según la dirección
+        currentIndex[slideshowId] += direction;
 
-    // Mostramos la nueva imagen
-    images[newIndex].style.display = 'block';
-  }
-
-  // Inicializar todas las imágenes a ocultarse excepto la primera
-  window.onload = function() {
-    var allSlides = document.querySelectorAll('.slides');
-    allSlides.forEach(function(slides) {
-      var images = slides.getElementsByTagName('img');
-      Array.from(images).forEach(function(image, index) {
-        if (index > 0) {
-          image.style.display = 'none';
+        // Limita el movimiento: no puede ser menor que 0 o mayor que el número de imágenes - 3
+        if (currentIndex[slideshowId] < 0) {
+            currentIndex[slideshowId] = 0;
         }
-      });
-    });
-  };
+        if (currentIndex[slideshowId] + 3 > totalSlides) {
+            currentIndex[slideshowId] = totalSlides - 3;
+        }
+
+        updateSlides(slideshowId);
+    }
+
+    // Inicializa la visualización de las imágenes al cargar la página
+    window.onload = () => {
+        updateSlides('slides1');
+        updateSlides('slides2');
+        updateSlides('slides3');
+        updateSlides('slides4');
+    };
 </script>
     <script src="assets/js/skel.min.js"></script>
     <script src="assets/js/skel-viewport.min.js"></script>
