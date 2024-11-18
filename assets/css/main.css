@@ -891,7 +891,7 @@ body::after {
     height: 0;
     overflow: hidden;
     z-index: -1;
-    content: url("images/benvida.png") url("images/mapa.png") url("images/nos-violeta.png") url("images/contacto.png") url("images/traballo.png") url("images/galeria.png");
+    content: url("images/benvida.png") url("images/mapa.png") url("images/nos.png") url("images/contacto.png") url("images/traballo.png") url("images/galeria.png");
 }
 
 body {
