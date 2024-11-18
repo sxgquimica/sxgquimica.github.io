@@ -1,22 +1,22 @@
-let currentIndex = 0;  // Índice para rastrear la posición actual
+function moveSlides(direction, carouselId) {
+    // Obtener el carrusel correspondiente
+    const carousel = document.getElementById(carouselId);
+    const slides = carousel.querySelector('.slides');
+    const slideCount = slides.children.length;
+    const slideWidth = slides.children[0].offsetWidth; // Obtener el ancho de cada imagen
+    const currentTransform = Math.abs(parseInt(slides.style.transform.replace('translateX(', '').replace('px)', '')) || 0);
 
-function moveSlides(direction, slidesId) {
-    const slides = document.getElementById(slidesId);  // Obtenemos el contenedor de imágenes
-    const totalSlides = slides.children.length; // Número total de imágenes
+    // Calcular el nuevo índice
+    let newTransform = currentTransform + direction * slideWidth;
 
-    // Calculamos el ancho de una imagen para mover el contenedor
-    const slideWidth = slides.children[0].offsetWidth;
-
-    // Actualizamos el índice basado en la dirección
-    currentIndex += direction;
-
-    // Aseguramos que el índice esté dentro del rango válido (0 a totalSlides - 3)
-    if (currentIndex < 0) {
-        currentIndex = totalSlides - 3;
-    } else if (currentIndex > totalSlides - 3) {
-        currentIndex = 0;
+    // Limitar la cantidad de desplazamiento para que no se salga del rango de las imágenes
+    if (newTransform < 0) {
+        newTransform = 0;
+    }
+    if (newTransform > (slideCount - 3) * slideWidth) { // Si hay más de 3 imágenes, limitar el desplazamiento
+        newTransform = (slideCount - 3) * slideWidth;
     }
 
-    // Desplazamos el contenedor de las imágenes
-    slides.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    // Aplicar el nuevo desplazamiento
+    slides.style.transform = `translateX(-${newTransform}px)`;
 }
