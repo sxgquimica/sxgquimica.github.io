@@ -1,5 +1,3 @@
-// Carrusel.js
-
 // Crea un objeto para almacenar el índice actual de cada carrusel
 let currentIndex = {
     'slides1': 0,
@@ -18,9 +16,9 @@ function updateSlides(slideshowId) {
     // Oculta todas las imágenes
     slides.forEach(slide => slide.style.display = 'none');
     
-    // Muestra las 3 imágenes correspondientes
+    // Muestra las 3 imágenes correspondientes (en modo bucle)
     for (let i = start; i < end; i++) {
-        const index = i % totalSlides; // El operador módulo crea un bucle continuo
+        const index = i % totalSlides; // Aquí usamos el operador módulo para crear el bucle
         slides[index].style.display = 'block';
     }
 }
@@ -31,22 +29,15 @@ function moveSlides(direction, slideshowId) {
     const totalSlides = slides.length;
 
     // Actualiza el índice actual según la dirección
-    if (direction === 1) {
-        // Movimiento hacia la derecha: avanzar una posición
-        currentIndex[slideshowId]++;
-    } else if (direction === -1) {
-        // Movimiento hacia la izquierda: retroceder una posición
-        currentIndex[slideshowId]--;
-    }
+    currentIndex[slideshowId] += direction;
 
-    // Usamos el operador módulo para hacer que el carrusel sea cíclico
+    // Si hemos llegado a la última imagen, volvemos al principio (bucle infinito)
     if (currentIndex[slideshowId] < 0) {
-        currentIndex[slideshowId] = totalSlides - 3; // Cuando llega al principio, vuelve al final
+        currentIndex[slideshowId] = totalSlides - 3; // Mostrar las últimas 3 imágenes
     } else if (currentIndex[slideshowId] + 3 > totalSlides) {
-        currentIndex[slideshowId] = 0; // Cuando llega al final, vuelve al principio
+        currentIndex[slideshowId] = 0; // Volver a la primera imagen
     }
 
-    // Muestra las nuevas imágenes
     updateSlides(slideshowId);
 }
 
