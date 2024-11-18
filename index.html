@@ -662,40 +662,6 @@
     <script src="assets/js/compliance-cookie.js"></script>
     <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
     <script src="assets/js/main.js"></script>
-    <script>
-        var slideIndex = [1, 1, 1];
-
-        function showSlides(n, slideshowIndex) {
-            var i;
-            var slides = document.getElementsByClassName(slideshowIndex);
-            if (n > slides.length) { slideIndex[slideshowIndex] = 1 }
-            if (n < 1) { slideIndex[slideshowIndex] = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slides[slideIndex[slideshowIndex] - 1].style.display = "block";
-        }
-
-        function moveSlides(n, slideshowId) {
-            var slideContainer = document.getElementById(slideshowId);
-            var currentScrollLeft = slideContainer.scrollLeft;
-            var slideWidth = slideContainer.clientWidth;
-            slideContainer.scrollLeft = currentScrollLeft + (slideWidth * n);
-        }
-
-        function openOrCloseFullImg(src) {
-            var fullImgBox = document.getElementById("fullImgBox");
-            var fullImg = document.getElementById("fullImg");
-
-            // Si la imagen está ya abierta y es la misma que la que se está intentando abrir, entonces la cerramos
-            if (fullImgBox.style.display === "block" && fullImg.src === src) {
-                closeFullImg();
-            } else {
-                fullImg.src = src;
-                fullImgBox.style.display = "block";
-            }
-        }
-    </script>
 
 </body>
 
