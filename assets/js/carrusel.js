@@ -1,7 +1,7 @@
 let currentIndex = 0;  // Índice para rastrear la posición actual
 
-function moveSlides(direction) {
-    const slides = document.getElementById('slides1');
+function moveSlides(direction, slidesId) {
+    const slides = document.getElementById(slidesId);  // Obtenemos el contenedor de imágenes
     const totalSlides = slides.children.length; // Número total de imágenes
 
     // Calculamos el ancho de una imagen para mover el contenedor
