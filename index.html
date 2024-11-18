@@ -533,6 +533,25 @@
                 </div>
             </article>
 
+		<script>
+let currentSlide = 0;
+
+function moveSlides(direction, slidesId) {
+    const slides = document.getElementById(slidesId);
+    const totalSlides = slides.children.length;
+    const slidesPerView = 3; // Número de imágenes visibles a la vez
+
+    currentSlide += direction;
+
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - slidesPerView; // Si llegamos al inicio, va al final
+    } else if (currentSlide > totalSlides - slidesPerView) {
+        currentSlide = 0; // Si llegamos al final, vuelve al principio
+    }
+
+    slides.style.transform = `translateX(-${currentSlide * 33.33}%)`; // Mueve el carrusel
+}
+</script>
 
             <!-- Mapa -->
             <article id="mapa" class="panel">
