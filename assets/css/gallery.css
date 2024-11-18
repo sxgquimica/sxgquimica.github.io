@@ -13,7 +13,7 @@
 
 /* Cada imagen */
 .slides img {
-    width: 33.33%;  /* Cada imagen ocupará un tercio del ancho del contenedor */
+    width: 25%;  /* Cada imagen ocupará un tercio del ancho del contenedor */
     height: auto;  /* Mantiene la proporción de la imagen */
 }
 
