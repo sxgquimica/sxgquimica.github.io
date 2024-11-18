@@ -5,15 +5,15 @@
     overflow: hidden; /* Para ocultar las imágenes que se salen del contenedor */
 }
 
-/* Estilo para las imágenes dentro del carrusel */
+/* Asegura que solo se muestre una imagen a la vez */
 .slides {
-    display: flex; /* Usamos flexbox para que las imágenes estén en fila */
-    transition: transform 0.5s ease; /* Suavizamos la transición al mover el carrusel */
+    display: flex;
+    transition: transform 0.3s ease-in-out; /* Suaviza la transición */
 }
 
 .slides img {
-    width: 33.33%; /* Mostramos 3 imágenes a la vez, cada una ocupa un 33.33% del contenedor */
-    object-fit: cover; /* Las imágenes se recortan para que mantengan su proporción */
+    width: 100%; /* Asegura que cada imagen ocupe el 100% del contenedor */
+    object-fit: cover;
 }
 
 /* Estilo para los botones de navegación */
