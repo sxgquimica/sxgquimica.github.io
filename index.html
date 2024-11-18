@@ -655,7 +655,28 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="assets/js/gallery.js"></script>
-    <script src="assets/js/carrusel.js"></script>
+    <script>
+	    function moveSlides(direction) {
+        const slideContainer = document.getElementById("slides");
+        const slideCount = slideContainer.children.length;
+        const slideWidth = slideContainer.children[0].offsetWidth; // Ancho de una imagen
+        const currentTransform = Math.abs(parseInt(slideContainer.style.transform.replace('translateX(', '').replace('px)', '')) || 0);
+
+        // Calcula el nuevo desplazamiento
+        let newTransform = currentTransform + direction * slideWidth;
+
+        // Limitar el desplazamiento para no exceder los límites
+        if (newTransform < 0) {
+            newTransform = 0; // Si está en el inicio, no mueve más
+        }
+        if (newTransform > (slideCount - 3) * slideWidth) {
+            newTransform = (slideCount - 3) * slideWidth; // Si hay más de 3 imágenes, no deja mover más
+        }
+
+        // Aplica el desplazamiento
+        slideContainer.style.transform = `translateX(-${newTransform}px)`;
+    }
+</script>
     <script src="assets/js/skel.min.js"></script>
     <script src="assets/js/skel-viewport.min.js"></script>
     <script src="assets/js/util.js"></script>
