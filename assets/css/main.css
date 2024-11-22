@@ -1523,6 +1523,42 @@ a.button {
     /*padding-left: 18%;*/
 }
 
+/* Historia */
+
+#anosahistoria img {
+    width: 100%;
+}
+
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .card-img-top {
+        aspect-ratio: 3 / 2;
+    }
+}
+
+#anosahistoria p.description {
+    width: 100%;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 160%;
+}
+
+#anosahistoria h4.name-mini {
+    text-align: center;
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1em;
+    /*padding-left: 18%;*/
+}
+
+
 /* Contacto */
 
 #contacto p.small {
