@@ -37,3 +37,26 @@ button {
 .next {
     right: 10px;
 }
+
+
+/* Estilo para el modal que muestra la imagen ampliada */
+#fullImgBox {
+    position: fixed; /* Asegura que el modal esté en una posición fija en la pantalla */
+    top: 0; /* Coloca el modal en la parte superior de la pantalla */
+    left: 0; /* Coloca el modal en la parte izquierda de la pantalla */
+    width: 100vw; /* El modal ocupa todo el ancho de la ventana */
+    height: 100vh; /* El modal ocupa todo el alto de la ventana */
+    display: flex; /* Usa flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente negro */
+    z-index: 1000; /* Asegura que el modal se muestre por encima del contenido */
+    display: none; /* Mantiene el modal oculto por defecto */
+}
+
+#fullImg {
+    max-width: 90%; /* Limita el tamaño máximo de la imagen */
+    max-height: 90%; /* Limita el tamaño máximo de la imagen */
+    border-radius: 8px; /* Bordes redondeados (opcional) */
+    object-fit: contain; /* Mantiene la imagen dentro del contenedor sin distorsionar */
+}
