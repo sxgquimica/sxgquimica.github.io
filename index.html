@@ -109,11 +109,21 @@
             height: 100%;
         }
 
-	@media (max-width: 550px) {
-    #anosahistoria {
-        display: none;  /* Ocultar la sección en móviles */
-    }
-}
+        @media (max-width: 768px) {
+            #anosahistoria {
+                visibility: hidden;  /* La sección estará oculta, pero será accesible */
+                position: absolute;  /* La desplaza fuera de la vista */
+                width: 100%;  /* Para asegurarse de que sigue ocupando el espacio */
+                height: auto;  /* Ajusta la altura si es necesario */
+                top: -9999px;  /* La coloca fuera de la vista */
+            }
+            /* Esto solo se aplica si se accede por un enlace */
+            #anosahistoria.visible {
+                visibility: visible;  /* La hace visible cuando tiene la clase "visible" */
+                position: relative;  /* La coloca en su lugar original */
+                top: auto;  /* Restaura su posición */
+            }
+        }
 
     /* Estilos añadidos para el modal */
     /* Estilos para dispositivos móviles */
