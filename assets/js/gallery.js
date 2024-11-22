@@ -1,20 +1,24 @@
 var fullImgBox = document.getElementById("fullImgBox");
 var fullImg = document.getElementById("fullImg");
 
+// Función para abrir la imagen en el modal
 function openFullImg(pic){
-    fullImgBox.style.display = "flex";
-    fullImg.src = pic;
-    fullImg.alt = pic.alt
+    fullImgBox.style.display = "flex";  // Muestra el modal
+    fullImg.src = pic;  // Establece la imagen en el modal
+    fullImg.alt = pic.alt;  // Establece el texto alternativo (alt) de la imagen
 }
 
+// Función para cerrar el modal
 function closeFullImg(){
-    fullImgBox.style.display = "none";
+    fullImgBox.style.display = "none";  // Oculta el modal
 }
 
+// Función para ocultar una imagen específica
 function hideImg(pic){
     pic.style.display = "none";
 }
 
+// Código para cargar las imágenes dinámicamente en el contenedor
 (async () => {
     const img_container = document.getElementById("img-container");
     const caption_container = document.getElementById("full-img-description")
