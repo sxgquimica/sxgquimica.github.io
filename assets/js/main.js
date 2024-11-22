@@ -247,8 +247,3 @@
 	});
 
 })(jQuery);
-
-// Cuando el enlace se hace clic, añade la clase 'visible' a la sección anosahistoria
-document.querySelector('#enlace-a-anosahistoria').addEventListener('click', function() {
-    document.querySelector('#anosahistoria').classList.add('visible');
-});
