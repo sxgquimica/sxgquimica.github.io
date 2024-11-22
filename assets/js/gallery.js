@@ -59,3 +59,8 @@ function hideImg(pic){
       img_container.appendChild(newImage);
     }
   })();
+
+// Asegúrate de asociar las imágenes de la galería estática con la función openFullImg
+document.querySelectorAll('.gallery-container img').forEach(img => {
+    img.setAttribute("onclick", "openFullImg(this.src)");  // Asocia el evento de cada imagen
+});
