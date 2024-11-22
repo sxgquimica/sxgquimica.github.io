@@ -18,47 +18,18 @@ function hideImg(pic){
     pic.style.display = "none";
 }
 
-// Código para cargar las imágenes dinámicamente en el contenedor
+// Aquí ya no necesitas crear un contenedor de imágenes dinámicamente
 (async () => {
-    const img_container = document.getElementById("img-container");
-    const caption_container = document.getElementById("full-img-description")
+    // Busca todas las imágenes dentro de los divs con clase 'slides'
+    const images = document.querySelectorAll('.slides img');
   
-    for (let i = 1; i <= 20; i++) {
-      // get file image
-      const pic_name = `img${i}`;
-      const pic_path = "images/galeria/" + pic_name + ".jpg";
-      // const caption_path = "images/galeria/description" + pic_name + ".txt"
-  
-      const newImage = new Image();
-      try {
-        newImage.src = pic_path;
-        // newImage.alt = pic_name;
-        newImage.setAttribute("onclick", "openFullImg(this.src)")
-        await new Promise((resolve, reject) => {
-          newImage.onload = function() {
-            resolve();
-          }
-          newImage.onerror = function() {
-            reject();
-          }
+    // Recorre todas las imágenes y asigna el evento para abrir el modal
+    images.forEach(image => {
+        image.addEventListener('click', function() {
+            openFullImg(image.src);
         });
-      } catch(e) {
-        // reject was called, break out of the loop:
-        continue;
-      }
-      // var fileReader = new FileReader(); 
-      // fileReader.onload = function (e) {
-      //   newImage.alt = fileReader.result; 
-      // } 
-      // fileReader.readAsText(caption_path);
-      // fetch(caption_path)
-      //   .then(response => response.text())
-      //   .then((data) => {
-      //       newImage.alt = data
-      // })
-      img_container.appendChild(newImage);
-    }
-  })();
+    });
+})();
 
 // Asegúrate de asociar las imágenes de la galería estática con la función openFullImg
 document.querySelectorAll('.gallery-container img').forEach(img => {
