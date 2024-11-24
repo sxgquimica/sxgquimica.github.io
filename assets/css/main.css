@@ -1201,8 +1201,6 @@ header>p {
     height: 80px;
 }
 
-}
-
 /* Button */
 
 input[type="button"],
@@ -2074,36 +2072,15 @@ ol.default li {
     /* Mapa */
 
     #mapa {
-        padding: 0;
-        height: 29em;
+        /* padding: 0; */
+        height: 100%;
     }
 
-    #mapa .pic {
-        width: 100%;
+    #mapa iframe {
+        width: 100vw;
+        position: relative;
+        margin: 0 -50vw;
     }
-
-    #mapa .pic img {
-        display: block;
-        width: 100%;
-    }
-
-    #mapa .pic .arrow {
-        display: none;
-    }
-
-    #mapa header {
-        text-align: center;
-    }
-
-    #mapa header>h1 {
-        font-size: 2.15em;
-        letter-spacing: -0.025em;
-    }
-
-    #mapa header>p {
-        font-size: 1.25em;
-    }
-
 
     /* Nos */
 
