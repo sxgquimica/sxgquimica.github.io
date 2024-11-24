@@ -1341,39 +1341,7 @@ ol.default li {
     position: relative;
 }
 
-/* a.button stuff
-
-a.button {
-    color: #ffffff;
-    background-color: #666666;
-    border-radius: 0.2em;
-    padding: 0.3em 1em;
-    margin-top: 0.6em;
-    -moz-transition: background-color .25s ease-in-out;
-    -webkit-transition: background-color .25s ease-in-out;
-    -ms-transition: background-color .25s ease-in-out;
-    transition: background-color .25s ease-in-out;
-    -moz-transition: color .25s ease-in-out;
-    -webkit-transition: color .25s ease-in-out;
-    -ms-transition: color .25s ease-in-out;
-    transition: color .25s ease-in-out;
-}
-
-*/
-
 /* Benvida */
-
-/*
-    #bigtext {
-        font-family:'Nexa Bold', sans-serif;
-        text-align: center;
-        width: 400px;
-        margin: 60px auto;
-        text-transform: uppercase;
-        line-height: 1.5em;
-        letter-spacing: -3px;
-    }
-    */
 
 #benvida {
     background-color: #333333;
@@ -1749,24 +1717,6 @@ a.button {
         font-size: 0.85em;
     }
 
-    /*
-					#nav a:after {
-						content: '';
-						display: block;
-						position: absolute;
-						left: 50%;
-						bottom: -0.75em;
-						margin-left: -0.5em;
-						border-bottom: solid 0em #ffffff;
-						border-left: solid 0.5em transparent;
-						border-right: solid 0.5em transparent;
-						-moz-transition: border-bottom-width .25s ease-in-out;
-						-webkit-transition: border-bottom-width .25s ease-in-out;
-						-ms-transition: border-bottom-width .25s ease-in-out;
-						transition: border-bottom-width .25s ease-in-out;
-					}
-*/
-
     #nav a:after {
         content: '·';
         display: block;
@@ -1780,23 +1730,6 @@ a.button {
         -ms-transition: border-bottom-width .25s ease-in-out;
         transition: border-bottom-width .25s ease-in-out;
     }
-
-    /*#nav a:after {
-						content: '';
-						display: block;
-						position: absolute;
-						left: 50%;
-						bottom: -1em;
-						margin-left: -0.6em;
-						border-bottom: solid 0em #ffffff;
-						border-left: solid 0.6em transparent;
-						border-right: solid 0.6em transparent;
-						-moz-transition: border-bottom-width .25s ease-in-out;
-						-webkit-transition: border-bottom-width .25s ease-in-out;
-						-ms-transition: border-bottom-width .25s ease-in-out;
-						transition: border-bottom-width .25s ease-in-out;
-					}
-					*/
 
     #nav a span {
         display: block;
@@ -1977,11 +1910,6 @@ a.button {
 @media screen and (max-width: 736px) {
 
     /* Basic */
-
-    /*html {
-				background-image: url("assets/css/images/bg.png");
-				background-repeat: repeat-y;
-			}*/
 
     body,
     input,
