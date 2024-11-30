@@ -1166,41 +1166,6 @@ header>p {
     width: auto;
 }
 
-.team-profile .img-container {
-    float: left;
-    overflow: hidden;
-    margin: 6.25px 25px 25px 0px;
-}
-
-.team-mini {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0em;
-}
-
-.team-mini .img-container {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.img-circle {
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
-
-.img-circle-small {
-    display: inline-block;
-    overflow: hidden;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-}
-
 /* Button */
 
 input[type="button"],
@@ -1625,32 +1590,6 @@ ol.default li {
 
     #wrapper {
         padding: 7px;
-    }
-
-    /* Nav */
-
-    #nav {
-        text-align: center;
-        margin: 6px 0 8px 0;
-    }
-
-    #nav a {
-        font-size: 2em;
-        opacity: 0.5;
-        outline: 0;
-        width: 1.5em;
-        height: 1.5em;
-        line-height: 1.35em;
-        /*margin: 0 0.25em 0 0.25em;*/
-        margin: 0;
-    }
-
-    #nav a:active {
-        opacity: 1.0;
-    }
-
-    #nav a span {
-        display: none;
     }
 
 }
