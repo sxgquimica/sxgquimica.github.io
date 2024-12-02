@@ -194,12 +194,12 @@ card .img-container {
 }
 
 .card .card-title {
-    font-size: 1.1em;
+    font-size: 0.8em;
     font-weight: 600;
 }
 
 .card .card-subtitle {
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: normal;
     color: #666;
     margin-bottom: 1em;
