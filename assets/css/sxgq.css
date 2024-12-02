@@ -189,17 +189,17 @@ card .img-container {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    font-size: 0.8em;
+    font-size: 1em;
     /*padding-left: 18%;*/
 }
 
 .card .card-title {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: 600;
 }
 
 .card .card-subtitle {
-    font-size: 0.8em;
+    font-size: 1em;
     font-weight: normal;
     color: #666;
     margin-bottom: 1em;
