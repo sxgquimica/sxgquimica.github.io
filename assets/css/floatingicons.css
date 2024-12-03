@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   height: 60px;
-  width: 60px;
+  width: 70px;
   padding-left: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   transition: all 0.3s linear;
@@ -44,7 +44,7 @@
 
 /* Estilo de los íconos */
 #floating-nav ul li a i {
-  font-size: 24px;   /* Ajustamos el tamaño del ícono */
+  font-size: 20px;   /* Ajustamos el tamaño del ícono */
   color: black;  /* Color negro para los íconos */
   margin-right: 10px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
@@ -58,7 +58,7 @@
   position: fixed;
   margin-top: 150px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.4);
-  width: 60px;
+  width: 70px;
   height: 180px;
   right: 0;
   transition: all 0.3s linear;
@@ -80,7 +80,7 @@
   text-align: right;   /* Alinea el texto a la derecha */
   padding-left: 10px;   /* Ajusta el espaciado si es necesario */
   padding-right: 10px;  /* Ajusta el espaciado si es necesario */
-  font-size: 24px;  /* Ajusta el tamaño del texto */
+  font-size: 20px;  /* Ajusta el tamaño del texto */
 }
 
 /* Mostrar el texto cuando el cursor pasa por encima */
