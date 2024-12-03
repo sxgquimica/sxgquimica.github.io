@@ -69,15 +69,20 @@
   position: relative;
 }
 
-/* Mostrar el texto solo al pasar el cursor */
+/* Estilo del texto */
 #floating-nav ul li a span {
   font-weight: 600;
   letter-spacing: 1px;
   display: none;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden;    /* Esconde el texto que se sale del contenedor */
+  text-overflow: ellipsis; /* Añade "..." al final si el texto es demasiado largo */
+  text-align: right;   /* Alinea el texto a la derecha */
+  padding-left: 10px;   /* Ajusta el espaciado si es necesario */
+  padding-right: 10px;  /* Ajusta el espaciado si es necesario */
 }
 
 /* Mostrar el texto cuando el cursor pasa por encima */
 #floating-nav ul li:hover a span {
   display: block;
-  padding-left: 30%;
 }
