@@ -20,8 +20,8 @@
   display: flex;      /* Usamos flexbox para alinear los elementos */
   align-items: center; /* Alineamos verticalmente los elementos */
   height: 60px;       /* Ajustamos la altura para que el contenido esté centrado */
-  width: 100%;
-  padding-right: 20px; /* Ajustamos el padding para un buen espaciado */
+  width: 70px;         /* Ancho inicial para los ítems */
+  padding-left: 20px;  /* Ajustamos el padding para un buen espaciado */
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   transition: all 0.3s linear;  /* Suaviza el cambio de color y otros efectos */
 }
@@ -34,6 +34,7 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);  /* Añade sombra al ítem */
   background: #9D7CFF;  /* Cambia el fondo a violeta */
   color: white;          /* Cambia el texto e íconos a blanco */
+  padding-left: 10px;    /* Ajusta el padding para que el texto se quede alineado */
 }
 
 /* Estilo de los íconos */
@@ -52,7 +53,7 @@
   position: fixed;
   margin-top: 150px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.4);
-  width: 70px;
+  width: 70px; /* Ancho del contenedor */
   right: 0;
   transition: all 0.3s linear;
 }
@@ -72,5 +73,5 @@
 /* Mostrar el texto cuando el cursor pasa por encima */
 #floating-nav ul li:hover a span {
   display: block;
-  padding-right: 30%;
+  padding-left: 30%;
 }
