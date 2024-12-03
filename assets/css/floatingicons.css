@@ -19,8 +19,8 @@
   color: black;  /* Texto negro */
   display: flex;
   align-items: center;
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   padding-left: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   transition: all 0.3s linear;
@@ -58,7 +58,7 @@
   position: fixed;
   margin-top: 150px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.4);
-  width: 70px; /* Ancho del contenedor */
+  width: 60px; /* Ancho del contenedor */
   right: 0;
   transition: all 0.3s linear;
 }
