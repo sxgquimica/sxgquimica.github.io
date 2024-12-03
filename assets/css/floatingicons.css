@@ -21,11 +21,12 @@
   align-items: center; /* Alineamos verticalmente los elementos */
   height: 60px;       /* Ajustamos la altura para que el contenido esté centrado */
   width: 70px;         /* Ancho inicial para los ítems */
-  padding-left: 20px;  /* Ajustamos el padding para un buen espaciado */
+  padding-left: 10px;  /* Ajustamos el padding para un buen espaciado */
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   transition: all 0.3s linear;  /* Suaviza el cambio de color y otros efectos */
   position: relative;  /* Necesario para que el enlace se mueva desde la derecha */
   right: 0;
+  font-size: 16px;
 }
 
 /* Estilo cuando el cursor pasa por encima */
@@ -41,7 +42,7 @@
 
 /* Estilo de los íconos */
 #floating-nav ul li a i {
-  font-size: 15px;   /* Ajustamos el tamaño del ícono */
+  font-size: 24px;   /* Ajustamos el tamaño del ícono */
   color: black;  /* Color negro para los íconos */
   margin-right: 3px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
