@@ -3,15 +3,6 @@
 /* Google Fonts(Poppins) */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
-/* {
-  font-family: "Poppins", sans-serif;
-  list-style: none;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}*/
-
 
 /* Estilos generales para los ítems */
 #floating-nav ul li a {
@@ -48,8 +39,9 @@
   margin-right: 10px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
 
+/* Estilo de los íconos al pasar el cursor por encima*/
 #floating-nav ul li a:hover i {
-  color: #333333;  /* Los íconos se vuelven de color gris oscuro o negro */
+  color: #333333;  /* Los íconos se vuelven de color gris oscuro */
 }
 
 
