@@ -97,4 +97,9 @@
     box-shadow: none; /* Eliminar la sombra */
     background: rgba(255, 255, 255, 0.35); /* Mantener fondo transparente */
   }
+
+  /* Ocultar el texto en dispositivos móviles */
+  #floating-nav ul li a span {
+    display: none; /* Ocultar el texto en móvil */
+  }
 }
