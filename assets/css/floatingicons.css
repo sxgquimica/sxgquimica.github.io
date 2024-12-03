@@ -80,6 +80,7 @@
   text-align: right;   /* Alinea el texto a la derecha */
   padding-left: 10px;   /* Ajusta el espaciado si es necesario */
   padding-right: 10px;  /* Ajusta el espaciado si es necesario */
+  font-size: 24px;  /* Ajusta el tamaño del texto */
 }
 
 /* Mostrar el texto cuando el cursor pasa por encima */
