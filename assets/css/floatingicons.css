@@ -32,7 +32,6 @@
 /* Estilo cuando el cursor pasa por encima */
 #floating-nav ul li:hover a {
   width: 180px;
-  z-index: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
   background: #ffffff;  /* Fondo blanco sin transparencia */
@@ -56,6 +55,7 @@
 
 #floating-nav {
   position: fixed;
+  z-index: 9999;
   margin-top: 150px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.4);
   width: 70px;
