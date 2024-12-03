@@ -13,7 +13,8 @@
 }*/
 
 
-nav {
+/* Estilos exclusivos para el floating nav */
+#floating-nav {
   position: fixed;
   margin-top: 150px;
   box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.4);
@@ -21,12 +22,12 @@ nav {
   transition: all 0.3s linear;
 }
 
-nav ul li {
+#floating-nav ul li {
   height: 60px;
   position: relative;
 }
 
-nav ul li a {
+#floating-nav ul li a {
   color: #fff;
   display: block;
   height: 100%;
@@ -37,52 +38,52 @@ nav ul li a {
   transition: all 0.3s linear;
 }
 
-nav ul li:hover a {
+#floating-nav ul li:hover a {
   width: 200px;
   z-index: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-nav ul li:nth-child(1) a {
+#floating-nav ul li:nth-child(1) a {
   background: #00acee;
 }
 
-nav ul li:nth-child(2) a {
+#floating-nav ul li:nth-child(2) a {
   background: #075e54;
 }
 
-nav ul li:nth-child(3) a {
+#floating-nav ul li:nth-child(3) a {
   background: #cd486b;
 }
 
-nav ul li:nth-child(4) a {
+#floating-nav ul li:nth-child(4) a {
   background: #4267b2;
 }
 
-nav ul li:nth-child(5) a {
+#floating-nav ul li:nth-child(5) a {
   background: #ff0000;
 }
 
-nav ul li:nth-child(6) a {
+#floating-nav ul li:nth-child(6) a {
   background: #0072b1;
 }
 
-nav ul li a i {
+#floating-nav ul li a i {
   font-size: 27px;
   position: absolute;
   left: 20px;
   top: 17px;
 }
 
-nav ul li a span {
+#floating-nav ul li a span {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: none;
 }
 
-nav ul li:hover a span {
+#floating-nav ul li:hover a span {
   display: block;
   padding-left: 30%;
 }
