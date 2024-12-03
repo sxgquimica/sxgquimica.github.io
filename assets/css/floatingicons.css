@@ -87,3 +87,14 @@
 #floating-nav ul li:hover a span {
   display: block;
 }
+
+/* Desactivar el efecto hover en móviles */
+@media (max-width: 768px) {
+  #floating-nav ul li:hover a {
+    width: 70px;  /* Mantener el ancho original */
+    opacity: 0.35;  /* Mantener la opacidad original */
+    right: 0;  /* No mover el botón en móvil */
+    box-shadow: none; /* Eliminar la sombra */
+    background: rgba(255, 255, 255, 0.35); /* Mantener fondo transparente */
+  }
+}
