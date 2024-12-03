@@ -31,14 +31,14 @@
 
 /* Estilo cuando el cursor pasa por encima */
 #floating-nav ul li:hover a {
-  width: 170px;
+  width: 180px;
   z-index: 1;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
   background: #ffffff;  /* Fondo blanco sin transparencia */
   color: #333333;  /* Texto negro */
   opacity: 1;  /* Opacidad al 100% (sin transparencia) */
-  right: 100px;
+  right: 110px;
 }
 
 
