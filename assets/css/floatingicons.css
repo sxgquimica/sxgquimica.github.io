@@ -41,7 +41,7 @@
 
 /* Estilo de los íconos */
 #floating-nav ul li a i {
-  font-size: 24px;   /* Ajustamos el tamaño del ícono */
+  font-size: 15px;   /* Ajustamos el tamaño del ícono */
   color: black;  /* Color negro para los íconos */
   margin-right: 3px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
