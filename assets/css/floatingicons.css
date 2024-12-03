@@ -14,6 +14,40 @@
 
 
 /* Estilos exclusivos para el floating nav */
+/* Estilos generales para los ítems */
+#floating-nav ul li a {
+  background: white;  /* Color de fondo blanco */
+  color: black;       /* Color del texto y los íconos en negro */
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 60px;
+  padding-left: 25%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  transition: all 0.3s linear;  /* Suaviza el cambio de color y otros efectos */
+}
+
+/* Estilo cuando el cursor pasa por encima */
+#floating-nav ul li:hover a {
+  width: 200px;  /* Aumenta el ancho al pasar el cursor */
+  z-index: 1;    /* Asegura que el ítem esté por encima de los demás */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);  /* Cambia el borde */
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);  /* Añade sombra al ítem */
+  background: #9D7CFF;  /* Cambia el fondo a violeta */
+  color: white;          /* Cambia el texto e íconos a blanco */
+}
+
+/* Estilo de los íconos */
+#floating-nav ul li a i {
+  color: black;  /* Color negro para los íconos */
+}
+
+/* Cuando el cursor pasa por encima, los íconos se vuelven blancos */
+#floating-nav ul li a:hover i {
+  color: white;  /* Color blanco para los íconos */
+}
+
+
 #floating-nav {
   position: fixed;
   margin-top: 150px;
@@ -27,16 +61,7 @@
   position: relative;
 }
 
-#floating-nav ul li a {
-  color: #fff;
-  display: block;
-  height: 100%;
-  width: 100%;
-  line-height: 60px;
-  padding-left: 25%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  transition: all 0.3s linear;
-}
+
 
 #floating-nav ul li:hover a {
   width: 200px;
@@ -45,36 +70,6 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-#floating-nav ul li:nth-child(1) a {
-  background: #00acee;
-}
-
-#floating-nav ul li:nth-child(2) a {
-  background: #075e54;
-}
-
-#floating-nav ul li:nth-child(3) a {
-  background: #cd486b;
-}
-
-#floating-nav ul li:nth-child(4) a {
-  background: #4267b2;
-}
-
-#floating-nav ul li:nth-child(5) a {
-  background: #ff0000;
-}
-
-#floating-nav ul li:nth-child(6) a {
-  background: #0072b1;
-}
-
-#floating-nav ul li a i {
-  font-size: 27px;
-  position: absolute;
-  left: 20px;
-  top: 17px;
-}
 
 #floating-nav ul li a span {
   font-weight: 600;
