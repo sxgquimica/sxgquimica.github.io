@@ -1434,7 +1434,7 @@ ol.default li {
         display: block;
         position: absolute;
         left: 50%;
-        bottom: -1.3em;
+        bottom: -0.75em;
         margin-left: -0.12em;
         border-bottom: solid 0em #ffffff;
         -moz-transition: border-bottom-width .25s ease-in-out;
