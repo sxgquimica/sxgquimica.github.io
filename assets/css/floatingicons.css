@@ -89,7 +89,7 @@
 }
 
 /* Desactivar el efecto hover en móviles */
-@media (max-width: 768px) {
+@media (max-width: 550px) {
   #floating-nav ul li:hover a {
     width: 70px;  /* Mantener el ancho original */
     opacity: 0.35;  /* Mantener la opacidad original */
