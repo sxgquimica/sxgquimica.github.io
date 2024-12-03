@@ -16,7 +16,7 @@
 /* Estilos generales para los ítems */
 #floating-nav ul li a {
   background: rgba(255, 255, 255, 0.35);  /* Fondo blanco con opacidad */
-  color: black;  /* Texto negro */
+  color: #333333;  /* Texto negro */
   display: flex;
   align-items: center;
   height: 60px;
@@ -36,7 +36,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
   background: #ffffff;  /* Fondo blanco sin transparencia */
-  color: black;  /* Texto negro */
+  color: #333333;  /* Texto negro */
   opacity: 1;  /* Opacidad al 100% (sin transparencia) */
   right: 130px;
 }
