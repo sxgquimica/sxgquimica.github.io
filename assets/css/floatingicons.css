@@ -38,14 +38,14 @@
   background: #ffffff;  /* Fondo blanco sin transparencia */
   color: #333333;  /* Texto negro */
   opacity: 1;  /* Opacidad al 100% (sin transparencia) */
-  right: 130px;
+  right: 100px;
 }
 
 
 /* Estilo de los íconos */
 #floating-nav ul li a i {
   font-size: 22px;   /* Ajustamos el tamaño del ícono */
-  color: black;  /* Color negro para los íconos */
+  color: #333333;  /* Color negro para los íconos */
   margin-right: 10px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
 
