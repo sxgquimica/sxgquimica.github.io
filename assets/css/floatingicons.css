@@ -15,30 +15,32 @@
 
 /* Estilos generales para los ítems */
 #floating-nav ul li a {
-  background: white;  /* Color de fondo blanco */
-  color: black;       /* Color del texto y los íconos en negro */
-  display: flex;      /* Usamos flexbox para alinear los elementos */
-  align-items: center; /* Alineamos verticalmente los elementos */
-  height: 60px;       /* Ajustamos la altura para que el contenido esté centrado */
-  width: 70px;         /* Ancho inicial para los ítems */
-  padding-left: 10px;  /* Ajustamos el padding para un buen espaciado */
+  background: rgba(255, 255, 255, 0.35);  /* Fondo blanco con opacidad */
+  color: black;  /* Texto negro */
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 70px;
+  padding-left: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  transition: all 0.3s linear;  /* Suaviza el cambio de color y otros efectos */
-  position: relative;  /* Necesario para que el enlace se mueva desde la derecha */
+  transition: all 0.3s linear;
+  position: relative;
   right: 0;
-  font-size: 16px;
+  opacity: 0.35;  /* Opacidad inicial similar a los íconos en nav */
 }
 
 /* Estilo cuando el cursor pasa por encima */
 #floating-nav ul li:hover a {
-  width: 200px;  /* Aumenta el ancho al pasar el cursor */
-  z-index: 1;    /* Asegura que el ítem esté por encima de los demás */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);  /* Cambia el borde */
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);  /* Añade sombra al ítem */
-  background: #9D7CFF;  /* Cambia el fondo a violeta */
-  color: white;          /* Cambia el texto e íconos a blanco */
-  right: 130px;          /* Mueve el enlace hacia la izquierda */
+  width: 200px;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+  background: #ffffff;  /* Fondo blanco sin transparencia */
+  color: black;  /* Texto negro */
+  opacity: 1;  /* Opacidad al 100% (sin transparencia) */
+  right: 130px;
 }
+
 
 /* Estilo de los íconos */
 #floating-nav ul li a i {
@@ -47,10 +49,10 @@
   margin-right: 10px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
 
-/* Cuando el cursor pasa por encima, los íconos se vuelven blancos */
 #floating-nav ul li a:hover i {
-  color: white;  /* Color blanco para los íconos */
+  color: #333333;  /* Los íconos se vuelven de color gris oscuro o negro */
 }
+
 
 #floating-nav {
   position: fixed;
