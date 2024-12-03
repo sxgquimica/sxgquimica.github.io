@@ -18,17 +18,15 @@
   background: rgba(255, 255, 255, 0.35);  /* Fondo blanco con opacidad */
   color: black;  /* Texto negro */
   display: flex;
-  align-items: center; /* Centrado vertical */
-  justify-content: center; /* Centrado horizontal */
-  height: 50px; /* Ajustar la altura de los bloques */
-  width: 50px; /* Ajusta el ancho del bloque */
-  padding-left: 10px;  /* Reducir el padding a la izquierda */
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  padding-left: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   transition: all 0.3s linear;
   position: relative;
   right: 0;
-  opacity: 0.35;  /* Opacidad inicial */
-  box-sizing: border-box; /* Asegura que padding y border se incluyan en el tamaño */
+  opacity: 0.35;  /* Opacidad inicial similar a los íconos en nav */
 }
 
 /* Estilo cuando el cursor pasa por encima */
@@ -39,21 +37,22 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
   background: #ffffff;  /* Fondo blanco sin transparencia */
   color: black;  /* Texto negro */
-  opacity: 1;  /* Opacidad al 100% */
+  opacity: 1;  /* Opacidad al 100% (sin transparencia) */
   right: 130px;
 }
 
+
 /* Estilo de los íconos */
 #floating-nav ul li a i {
-  font-size: 24px;   /* Ajusta el tamaño del ícono */
+  font-size: 24px;   /* Ajustamos el tamaño del ícono */
   color: black;  /* Color negro para los íconos */
-  margin-right: 10px;  /* Espacio entre ícono y texto */
+  margin-right: 10px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
 
-/* Estilo cuando el cursor pasa por encima de los íconos */
 #floating-nav ul li a:hover i {
-  color: #333333;  /* Los íconos se vuelven gris oscuro */
+  color: #333333;  /* Los íconos se vuelven de color gris oscuro o negro */
 }
+
 
 #floating-nav {
   position: fixed;
@@ -67,8 +66,6 @@
 #floating-nav ul li {
   height: 60px;
   position: relative;
-  display: flex;
-  align-items: center; /* Centra verticalmente los bloques */
 }
 
 /* Mostrar el texto solo al pasar el cursor */
@@ -76,12 +73,10 @@
   font-weight: 600;
   letter-spacing: 1px;
   display: none;
-  padding-left: 10px;  /* Añade espacio al texto */
 }
 
 /* Mostrar el texto cuando el cursor pasa por encima */
 #floating-nav ul li:hover a span {
   display: block;
-  padding-left: 30%; /* Controla la ubicación del texto */
+  padding-left: 30%;
 }
-
