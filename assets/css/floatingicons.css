@@ -24,6 +24,8 @@
   padding-left: 20px;  /* Ajustamos el padding para un buen espaciado */
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   transition: all 0.3s linear;  /* Suaviza el cambio de color y otros efectos */
+  position: relative;  /* Necesario para que el enlace se mueva desde la derecha */
+  right: 0;
 }
 
 /* Estilo cuando el cursor pasa por encima */
@@ -34,7 +36,7 @@
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);  /* Añade sombra al ítem */
   background: #9D7CFF;  /* Cambia el fondo a violeta */
   color: white;          /* Cambia el texto e íconos a blanco */
-  padding-left: 10px;    /* Ajusta el padding para que el texto se quede alineado */
+  right: 130px;          /* Mueve el enlace hacia la izquierda */
 }
 
 /* Estilo de los íconos */
