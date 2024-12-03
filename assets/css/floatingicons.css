@@ -43,7 +43,7 @@
 #floating-nav ul li a i {
   font-size: 24px;   /* Ajustamos el tamaño del ícono */
   color: black;  /* Color negro para los íconos */
-  margin-right: 10px;  /* Añadimos un poco de espacio entre el ícono y el texto */
+  margin-right: 5px;  /* Añadimos un poco de espacio entre el ícono y el texto */
 }
 
 /* Cuando el cursor pasa por encima, los íconos se vuelven blancos */
