@@ -2,6 +2,7 @@
 .gallery-container {
     position: relative;  /* Para poder posicionar los botones sobre el carrousel */
     width: 100%;  /* Asegura que el contenedor ocupe todo el ancho disponible */
+    height: auto;
     overflow: hidden;  /* Oculta las imágenes que se desbordan */
 }
 
