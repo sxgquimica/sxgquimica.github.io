@@ -64,7 +64,6 @@
 /* Estilo del texto */
 #floating-nav ul li a span {
   font-weight: 600;
-  letter-spacing: 1px;
   display: none;
   white-space: nowrap; /* Evita que el texto se divida en varias líneas */
   overflow: hidden;    /* Esconde el texto que se sale del contenedor */
@@ -73,6 +72,7 @@
   padding-left: 10px;   /* Ajusta el espaciado si es necesario */
   padding-right: 10px;  /* Ajusta el espaciado si es necesario */
   font-size: 18px;  /* Ajusta el tamaño del texto */
+  font-weight: 100;
 }
 
 /* Mostrar el texto cuando el cursor pasa por encima */
