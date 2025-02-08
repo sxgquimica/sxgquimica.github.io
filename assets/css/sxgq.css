@@ -196,6 +196,7 @@ card .img-container {
 .card .card-title {
     font-size: 0.9em;
     font-weight: 600;
+    line-height: 130%;
 }
 
 .card .card-subtitle {
