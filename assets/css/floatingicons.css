@@ -1,0 +1,97 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+
+/* Estilos generales para los ítems */
+#floating-nav ul li a {
+  background: rgba(255, 255, 255, 0.35);  /* Fondo blanco con opacidad */
+  color: #333333;  /* Texto negro */
+  display: flex;
+  align-items: center;
+  height: 55px;
+  width: 70px;
+  padding-left: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  transition: all 0.3s linear;
+  position: relative;
+  right: 0;
+  opacity: 0.35;  /* Opacidad inicial similar a los íconos en nav */
+}
+
+/* Estilo cuando el cursor pasa por encima */
+#floating-nav ul li:hover a {
+  width: 180px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+  background: #ffffff;  /* Fondo blanco sin transparencia */
+  color: #333333;  /* Texto negro */
+  opacity: 1;  /* Opacidad al 100% (sin transparencia) */
+  right: 110px;
+}
+
+
+/* Estilo de los íconos */
+#floating-nav ul li a i {
+  font-size: 22px;   /* Ajustamos el tamaño del ícono */
+  color: black;  /* Color negro para los íconos */
+  margin-right: 10px;  /* Añadimos un poco de espacio entre el ícono y el texto */
+}
+
+/* Estilo de los íconos al pasar el cursor por encima*/
+#floating-nav ul li a:hover i {
+  color: #333333;  /* Los íconos se vuelven de color gris oscuro */
+}
+
+
+#floating-nav {
+  position: fixed;
+  z-index: 9999;
+  margin-top: 150px;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.4);
+  width: 70px;
+  height: 165px;
+  right: 0;
+  transition: all 0.3s linear;
+}
+
+#floating-nav ul li {
+  height: 55px;
+  position: relative;
+}
+
+/* Estilo del texto */
+#floating-nav ul li a span {
+  font-weight: 600;
+  display: none;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden;    /* Esconde el texto que se sale del contenedor */
+  text-overflow: ellipsis; /* Añade "..." al final si el texto es demasiado largo */
+  text-align: right;   /* Alinea el texto a la derecha */
+  padding-left: 10px;   /* Ajusta el espaciado si es necesario */
+  padding-right: 10px;  /* Ajusta el espaciado si es necesario */
+  font-size: 18px;  /* Ajusta el tamaño del texto */
+  font-weight: 100;
+}
+
+/* Mostrar el texto cuando el cursor pasa por encima */
+#floating-nav ul li:hover a span {
+  display: block;
+}
+
+/* Desactivar el efecto hover en móviles */
+@media (max-width: 736px) {
+  #floating-nav ul li:hover a {
+    width: 70px;  /* Mantener el ancho original */
+    opacity: 0.35;  /* Mantener la opacidad original */
+    right: 0;  /* No mover el botón en móvil */
+    box-shadow: none; /* Eliminar la sombra */
+    background: rgba(255, 255, 255, 0.35); /* Mantener fondo transparente */
+  }
+
+  /* Ocultar el texto en dispositivos móviles */
+  #floating-nav ul li a span {
+    display: none !important; /* Usamos !important para forzar la ocultación */
+  }
+}

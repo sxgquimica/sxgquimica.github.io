@@ -1435,7 +1435,7 @@ ol.default li {
         position: absolute;
         left: 50%;
         bottom: -1.3em;
-        margin-left: -0.12em;
+        margin-left: -0.15em;
         border-bottom: solid 0em #ffffff;
         -moz-transition: border-bottom-width .25s ease-in-out;
         -webkit-transition: border-bottom-width .25s ease-in-out;
@@ -1444,6 +1444,8 @@ ol.default li {
     }
 
     #nav a span {
+        font-family: 'Open Sans';
+        font-weight: 100;
         display: block;
         position: absolute;
         background: #222222;
