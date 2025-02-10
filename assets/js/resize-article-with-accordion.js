@@ -1,11 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const accordion = document.querySelector('.accordion');
     var $window = $(window);
+    const accordions = ["#accordion-news", "#accordion-directivas"];
 
-    function updateArticleHeight() {
-        $window.trigger('resize');
-    }
+    accordions.forEach(function (accordion_name, index) {
+        var accordion = document.querySelector(accordion_name);
 
-    accordion.addEventListener('shown.bs.collapse', updateArticleHeight);
-    accordion.addEventListener('hidden.bs.collapse', updateArticleHeight);
+        function updateArticleHeight() {
+            // console.log("TRIGGERING RESIZE")
+            $window.trigger('resize');
+        }
+
+        accordion.addEventListener('shown.bs.collapse', function (event) {
+            // console.log("Accordion item hidden:", event.target);
+            updateArticleHeight();
+        });
+        accordion.addEventListener('hidden.bs.collapse', function (event) {
+            // console.log("Accordion item hidden:", event.target);
+            updateArticleHeight();
+        });
+    });
 });
